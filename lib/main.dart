@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+// import 'package:flutter/widgets.dart';
+import 'package:flutter/cupertino.dart';
 
 void main() {
   runApp(MyApp());
@@ -125,6 +127,7 @@ class ProductDetail extends StatelessWidget {
           children: <Widget>[
             Icon(Icons.photo_camera),
             Text("拍照"),
+
           ],
         ),
       ),
