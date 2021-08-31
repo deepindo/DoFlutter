@@ -58,6 +58,8 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             TextButton(
               child: Text("push new route"),
+              style: ButtonStyle(
+              ),
               // style: ButtonStyle(textStyle: TextStyle(foregroundColor: Colors.cyan)),
               onPressed: () {
                 //导航到新路由
