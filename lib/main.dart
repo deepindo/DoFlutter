@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.orange,
       ),
-      routes: {
-
-      },
+      routes: {},
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -60,25 +58,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             IconButton(
                 onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) {
-                        return ProductDetail();
-                      }));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ProductDetail();
+                  }));
                 },
                 icon: Icon(Icons.arrow_forward)),
             TextButton(
               child: Text("push new route"),
               style: ButtonStyle(
-              ),
-              // style: ButtonStyle(textStyle: TextStyle(foregroundColor: Colors.cyan)),
+                  // MaterislStateProperty<TextStyle>:
+                  // textStyle: TextStyle(fontSize: 18, color: Colors.cyan),
+                  ),
               onPressed: () {
                 //导航到新路由
-                Navigator.push( context,
-                    MaterialPageRoute(builder: (context) {
-                      return NewRoute();
-                    }));
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return NewRoute();
+                }));
               },
-
             ),
             RandomWordsWidget(),
           ],
@@ -92,7 +88,6 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
 
 class NewRoute extends StatelessWidget {
   @override
@@ -127,7 +122,25 @@ class ProductDetail extends StatelessWidget {
           children: <Widget>[
             Icon(Icons.photo_camera),
             Text("拍照"),
-
+            Text(
+              "textAlign：文本的对齐方式；可以选择左对齐、右对齐还是居中。注意，对齐的参考系是Text widget本身。本例中虽然是指定了居中对齐，但因为Text文本内容宽度不足一行，Text的宽度和文本内容长度相等，那么这时指定对齐方式是没有意义的，只有Text宽度大于文本内容长度时指定此属性才有意义。下面我们指定一个较长的字符串：" *
+                  5,
+              textAlign: TextAlign.center,
+              textScaleFactor: 1.5,
+              overflow: TextOverflow.fade,
+              maxLines: 10,
+            ),
+            Text(
+              "此示例只展示了TextStyle的部分属性，它还有一些其它属性，属性名基本都是自解释的，在此不再赘述，读者可以查阅SDK文档。值得注意的是：",
+              style: TextStyle(
+                  color: Colors.cyan,
+                  fontSize: 14.0,
+                  height: 2.2,
+                  fontFamily: "Courier",
+                  background: new Paint()..color = Colors.yellow,
+                  decoration: TextDecoration.underline,
+                  decorationStyle: TextDecorationStyle.dashed),
+            )
           ],
         ),
       ),
