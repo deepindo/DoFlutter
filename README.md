@@ -27,8 +27,8 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 环境变量配置
 
-```
 ~/.bash_profile 或者~/.zshrc配置内容(Mac新的都是用的zsh，所以配置的是zshrc)：
+```
 export ANDROID_SDK_ROOT=/Users/deepindu/Library/Android/sdk
 export ANDROID_AVD_HOME=/Users/deepindu/.android/avd
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
