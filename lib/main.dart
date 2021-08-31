@@ -56,6 +56,14 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) {
+                        return ProductDetail();
+                      }));
+                },
+                icon: Icon(Icons.arrow_forward)),
             TextButton(
               child: Text("push new route"),
               style: ButtonStyle(
@@ -92,7 +100,33 @@ class NewRoute extends StatelessWidget {
         title: Text("New route"),
       ),
       body: Center(
-        child: Text("This is new route"),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text("This is title"),
+            Text("This is description"),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class ProductDetail extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("商品详情页"),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Icon(Icons.photo_camera),
+            Text("拍照"),
+          ],
+        ),
       ),
     );
   }
