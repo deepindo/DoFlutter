@@ -27,8 +27,18 @@ samples, guidance on mobile development, and a full API reference.
 
 ## 环境变量配置
 
-``~/.bash_profile` 或者`~/.zshrc`配置内容(Mac新的都是用的zsh，所以配置的是zshrc)：
+`~/.bash_profile` 或者 `~/.zshrc` 配置内容(Mac新的都是用的zsh，所以配置的是`zshrc`)：
 
+打开zshrc
+`open ~/.zshrc` 
+
+若是该文件不存在，就创建一个该名称的文件
+`touch ~/.zshrc`
+
+然后再执行
+`open ~/.zshrc`
+
+复制以下环境变量进去，将对应各自电脑的路径改掉
 ```
 export ANDROID_SDK_ROOT=/Users/deepindu/Library/Android/sdk
 export ANDROID_AVD_HOME=/Users/deepindu/.android/avd
