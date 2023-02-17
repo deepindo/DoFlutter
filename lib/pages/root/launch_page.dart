@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:doflutter/pages/root/rootTabBar.dart';
+import 'package:doflutter/pages/root/root_bottomNavigationBar.dart';
 import 'package:flutter/material.dart';
 
 class LaunchPage extends StatefulWidget {
@@ -38,7 +38,7 @@ class _LaunchPageState extends State<LaunchPage> {
 
     Navigator.pushAndRemoveUntil(context,
         MaterialPageRoute(builder: (BuildContext context) {
-      return const RootTabBar();
+      return const RootBottomNavigationBar();
     }), (route) => false);
   }
 

@@ -1,8 +1,8 @@
 // import 'package:dodu/config/app_theme.dart';
-import 'package:doflutter/config/app_colors.dart';
+// import 'package:doflutter/global/config/app_colors.dart';
 import 'package:doflutter/pages/root/launch_page.dart';
 import 'package:flutter/material.dart';
-import 'config/app_theme.dart';
+import 'global/config/app_theme.dart';
 // import './pages/launch_page.dart';
 
 void main() {

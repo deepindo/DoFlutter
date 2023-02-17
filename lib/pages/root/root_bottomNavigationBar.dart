@@ -1,16 +1,17 @@
-import 'package:doflutter/config/app_colors.dart';
-import 'package:doflutter/pages/sub/home_page.dart';
-import 'package:doflutter/pages/sub/me_page.dart';
-import 'package:doflutter/pages/sub/music_page.dart';
-import 'package:doflutter/pages/sub/post_page.dart';
-import 'package:doflutter/pages/sub/video_page.dart';
+import 'package:doflutter/global/config/app_colors.dart';
+import 'package:doflutter/pages/vcs/home_page.dart';
+import 'package:doflutter/pages/vcs/me_page.dart';
+import 'package:doflutter/pages/vcs/music_page.dart';
+import 'package:doflutter/pages/vcs/post_page.dart';
+import 'package:doflutter/pages/vcs/video_page.dart';
 import 'package:flutter/material.dart';
 
-class RootTabBar extends StatefulWidget {
-  const RootTabBar({super.key});
+class RootBottomNavigationBar extends StatefulWidget {
+  const RootBottomNavigationBar({super.key});
 
   @override
-  State<RootTabBar> createState() => _RootTabBarState();
+  State<RootBottomNavigationBar> createState() =>
+      _RootBottomNavigationBarState();
 }
 
 // item英文对应中文名集合
@@ -22,7 +23,7 @@ const Map<String, String> _bottomNavigationBarItemNameMap = {
   'me': '我的',
 };
 
-class _RootTabBarState extends State<RootTabBar> {
+class _RootBottomNavigationBarState extends State<RootBottomNavigationBar> {
   // 当前item显示索引
   int _currentIndex = 0;
 

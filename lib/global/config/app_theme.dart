@@ -1,4 +1,4 @@
-import 'package:doflutter/config/app_colors.dart';
+import 'package:doflutter/global/config/app_colors.dart';
 import 'package:flutter/material.dart';
 
 final ThemeData themeData = ThemeData(
