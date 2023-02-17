@@ -64,6 +64,11 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
+   # 配置导入的图片资源
+  assets:
+    - assets/images/common/
+    - assets/images/icons/
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
