@@ -1,8 +1,6 @@
 import 'package:doflutter/global/config/app_colors.dart';
 import 'package:doflutter/pages/vcs/setting_page.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class MePage extends StatefulWidget {
   const MePage({super.key});
@@ -38,16 +36,13 @@ class _MePageState extends State<MePage> {
   //列表
   ListView _listView() {
     return ListView(
-      // padding: EdgeInsets.zero,
-      // shrinkWrap: true,
-      // physics: const NeverScrollableScrollPhysics(),
       children: [
         _listHeader(),
         const SizedBox(
           height: 10,
         ),
         _operateGridView(),
-        // const Divider(),
+        const Divider(),
         Container(
           alignment: Alignment.center,
           // color: Colors.green,
@@ -91,9 +86,10 @@ class _MePageState extends State<MePage> {
         Container(
           height: 10,
           decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 247, 246, 246),
+            color: Color.fromARGB(255, 247, 247, 247),
           ),
         ),
+        const Padding(padding: EdgeInsets.all(10)),
         _otherGridView(),
       ],
     );
@@ -102,33 +98,49 @@ class _MePageState extends State<MePage> {
   //列表头部
   Widget _listHeader() {
     return Container(
-      height: 100,
+      height: 90,
       // color: Colors.green,
       alignment: Alignment.centerLeft,
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Row(
         children: [
-          ClipOval(
-            child: Image.network(
-              "https://www.itying.com/images/flutter/1.png",
-              fit: BoxFit.cover,
-              width: 70,
-              height: 70,
-            ),
-          ),
-          // const CircleAvatar(
-          //   backgroundImage: NetworkImage(
+          // ClipOval(
+          //   child: Image.network(
           //     "https://www.itying.com/images/flutter/1.png",
+          //     fit: BoxFit.cover,
+          //     width: 70,
+          //     height: 70,
           //   ),
           // ),
+          const CircleAvatar(
+            backgroundImage: NetworkImage(
+              "https://www.itying.com/images/flutter/2.png",
+            ),
+            radius: 35, // 半径
+          ),
+          // const ListTile(
+          //   title: Text("迦若"),
+          //   subtitle: Text("会员名: jiaruo"),
+          // ), //这种不行
+          const SizedBox(
+            width: 10,
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
-              Text("Deepin"),
+              Text("李白",
+                  style: TextStyle(
+                      // backgroundColor: Colors.green,
+                      fontSize: 18,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800)),
               Text(
-                "会员名",
+                "会员名: d****n",
                 style: TextStyle(
-                    fontSize: 12, color: Color.fromARGB(221, 41, 41, 41)),
+                    // backgroundColor: Colors.green,
+                    fontSize: 12,
+                    color: Color.fromARGB(221, 41, 41, 41)),
               ),
             ],
           ),
@@ -148,6 +160,8 @@ class _MePageState extends State<MePage> {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 5,
+      // padding: const EdgeInsets.all(0),
+      childAspectRatio: 1.6,
       children: [
         Column(
           children: const [
@@ -221,6 +235,7 @@ class _MePageState extends State<MePage> {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       crossAxisCount: 4,
+      childAspectRatio: 1.3,
       children: [
         Column(
           children: const [
@@ -274,6 +289,7 @@ class _MePageState extends State<MePage> {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 4,
+        childAspectRatio: 1.3,
         children: [
           Column(
             children: const [
@@ -324,6 +340,7 @@ class _MePageState extends State<MePage> {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 4,
+        childAspectRatio: 1.3,
         children: [
           Column(
             children: const [
@@ -364,6 +381,9 @@ class _MePageState extends State<MePage> {
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),
         crossAxisCount: 4,
+        // crossAxisSpacing: 0, //水平子widget之间间距
+        // mainAxisSpacing: 0, //垂直子widget之间间距
+        childAspectRatio: 1.3,
         children: [
           Column(
             children: const [
