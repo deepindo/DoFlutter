@@ -25,7 +25,7 @@ const Map<String, String> _bottomNavigationBarItemNameMap = {
 
 class _RootBottomNavigationBarState extends State<RootBottomNavigationBar> {
   // 当前item显示索引
-  int _currentIndex = 0;
+  int _currentIndex = 1;
 
   // 底部item数组
   final List<BottomNavigationBarItem> _bottomNavigationBarItmeList = [];
@@ -61,7 +61,7 @@ class _RootBottomNavigationBarState extends State<RootBottomNavigationBar> {
     return Scaffold(
       body: _pageList[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
+        // type: BottomNavigationBarType.fixed,
         currentIndex: _currentIndex,
         iconSize: 25,
         items: _bottomNavigationBarItmeList,

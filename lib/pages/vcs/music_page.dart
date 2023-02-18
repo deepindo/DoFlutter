@@ -10,8 +10,18 @@ class MusicPage extends StatefulWidget {
 class _MusicPageState extends State<MusicPage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text("music"),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("学习"),
+        // backgroundColor: Colors.red,
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text("1112"),
+          )
+        ],
+      ),
     );
   }
 }
