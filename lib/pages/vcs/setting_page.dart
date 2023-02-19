@@ -134,15 +134,42 @@ class _SettingPageState extends State<SettingPage> {
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
-          const SizedBox(
-            height: 20,
+          // const SizedBox(
+          //   height: 20,
+          // ),
+          Container(
+            height: 44,
+            // alignment: Alignment.center,
+            // color: Colors.green,
+            // margin: const EdgeInsets.symmetric(horizontal: 25),
+            margin: const EdgeInsets.all(25),
+            // padding: const EdgeInsets.all(2),
+            child: ElevatedButton(
+                style: const ButtonStyle(
+                  backgroundColor: MaterialStatePropertyAll(Colors.green),
+                ),
+                onPressed: () {},
+                child: const Text(
+                  "退出登录",
+                  style: TextStyle(color: Colors.white, fontSize: 16),
+                )),
           ),
-          ElevatedButton(
-              onPressed: () {},
-              child: const Text(
-                "退出登录",
-                style: TextStyle(color: Colors.white, fontSize: 16),
-              )),
+          // ElevatedButton.icon(
+          //     onPressed: () {},
+          //     icon: const Icon(Icons.logout_rounded),
+          //     label: const Text("退出登录")),
+          // TextButton(
+          //     onPressed: () {
+          //       print("文本按钮");
+          //     },
+          //     child: const Text("文本按钮")),
+          // const OutlinedButton(
+          //     style: ButtonStyle(
+          //         side:
+          //             MaterialStatePropertyAll(BorderSide(color: Colors.cyan))),
+          //     onPressed: null,
+          //     child: Text("边框按钮(改了边框颜色)")),
+          // const IconButton(onPressed: null, icon: Icon(Icons.logout))
         ],
       ),
     );
