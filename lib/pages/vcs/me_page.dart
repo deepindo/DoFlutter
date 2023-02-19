@@ -44,17 +44,18 @@ class _MePageState extends State<MePage> {
         _operateGridView(),
         const Divider(),
         Container(
-          alignment: Alignment.center,
+          // alignment: Alignment.center,
           // color: Colors.green,
           height: 40,
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
               Text(
                 "我的交易",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
-              Expanded(child: SizedBox()),
+              // Expanded(child: SizedBox()),
               Text(
                 "在闲鱼赚了6000.00元",
                 style: TextStyle(fontSize: 12, color: AppColors.un2active),

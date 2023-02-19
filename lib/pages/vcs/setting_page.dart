@@ -86,6 +86,54 @@ class _SettingPageState extends State<SettingPage> {
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
+          ListTile(
+            title: const Text(
+              "新消息通知",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+          ),
+          ListTile(
+            title: const Text(
+              "新消息通知",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+          ),
+          ListTile(
+            title: const Text(
+              "新消息通知",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+          ),
+          ListTile(
+            title: const Text(
+              "新消息通知",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+          ),
+          ListTile(
+            title: const Text(
+              "新消息通知",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+          ),
+          ListTile(
+            title: const Text(
+              "新消息通知",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+          ),
           const SizedBox(
             height: 20,
           ),
