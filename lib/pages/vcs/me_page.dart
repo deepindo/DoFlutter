@@ -37,7 +37,9 @@ class _MePageState extends State<MePage> {
   ListView _listView() {
     return ListView(
       children: [
-        _listHeader(),
+        _stackPositionedListHeader(),
+        // _customListHeader(),
+        // _listTileHeader(),
         const SizedBox(
           height: 10,
         ),
@@ -96,8 +98,53 @@ class _MePageState extends State<MePage> {
     );
   }
 
-  //列表头部
-  Widget _listHeader() {
+  //用stack和positioned实现的
+  Widget _stackPositionedListHeader() {
+    return SizedBox(
+      height: 90,
+      // color: Colors.green,
+      // alignment: Alignment.centerLeft,
+      child: Stack(alignment: AlignmentDirectional.center, children: [
+        const Positioned(
+            left: 25,
+            child: CircleAvatar(
+              backgroundImage: NetworkImage(
+                "https://www.itying.com/images/flutter/2.png",
+              ),
+              radius: 35, // 半径
+            )),
+        Positioned(
+            left: 105,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text("李白",
+                    style: TextStyle(
+                        // backgroundColor: Colors.green,
+                        fontSize: 18,
+                        color: Colors.black,
+                        fontWeight: FontWeight.w800)),
+                Text(
+                  "会员名: d****n",
+                  style: TextStyle(
+                      // backgroundColor: Colors.green,
+                      fontSize: 12,
+                      color: Color.fromARGB(221, 41, 41, 41)),
+                ),
+              ],
+            )),
+        const Positioned(
+            right: 25,
+            child: Icon(
+              Icons.keyboard_arrow_right,
+              size: 20,
+            )),
+      ]),
+    );
+  }
+
+  //自定义列表头部，实现的方式比较自由
+  Widget _customListHeader() {
     return Container(
       height: 90,
       // color: Colors.green,
@@ -151,6 +198,28 @@ class _MePageState extends State<MePage> {
             size: 20,
           ),
         ],
+      ),
+    );
+  }
+
+  //不是非常在意细节的，可以直接用一个ListTile实现整个header,
+  //实现最快，但是很多细节不方便调整
+  Widget _listTileHeader() {
+    return const SizedBox(
+      height: 90,
+      child: ListTile(
+        leading: CircleAvatar(
+          backgroundImage: NetworkImage(
+            "https://www.itying.com/images/flutter/2.png",
+          ),
+          radius: 35, // 半径
+        ),
+        title: Text("xxxxx"),
+        subtitle: Text("data"),
+        trailing: Icon(
+          Icons.keyboard_arrow_right,
+          size: 20,
+        ),
       ),
     );
   }
