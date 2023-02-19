@@ -149,7 +149,7 @@ class _MePageState extends State<MePage> {
           const Icon(
             Icons.keyboard_arrow_right,
             size: 20,
-          )
+          ),
         ],
       ),
     );
