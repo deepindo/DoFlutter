@@ -1,9 +1,11 @@
 import 'package:doflutter/global/config/app_colors.dart';
+import 'package:doflutter/pages/vcs/book_page.dart';
+import 'package:doflutter/pages/vcs/course_page.dart';
 import 'package:doflutter/pages/vcs/home_page.dart';
 import 'package:doflutter/pages/vcs/me_page.dart';
-import 'package:doflutter/pages/vcs/music_page.dart';
+// import 'package:doflutter/pages/vcs/music_page.dart';
 import 'package:doflutter/pages/vcs/post_page.dart';
-import 'package:doflutter/pages/vcs/video_page.dart';
+// import 'package:doflutter/pages/vcs/video_page.dart';
 import 'package:flutter/material.dart';
 
 class RootBottomNavigationBar extends StatefulWidget {
@@ -33,9 +35,9 @@ class _RootBottomNavigationBarState extends State<RootBottomNavigationBar> {
   // 页面数组
   final List<Widget> _pageList = const [
     HomePage(),
-    MusicPage(),
+    CoursePage(),
     PostPage(),
-    VideoPage(),
+    BookPage(),
     MePage(),
   ];
 
