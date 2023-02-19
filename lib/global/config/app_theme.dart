@@ -55,7 +55,7 @@ final ThemeData themeData = ThemeData(
     foregroundColor: Colors.black,
     titleTextStyle: TextStyle(
         color: Colors.black, fontSize: 16, fontWeight: FontWeight.w300),
-    centerTitle: true,
+    // centerTitle: true,
     elevation: 0,
   ),
 
