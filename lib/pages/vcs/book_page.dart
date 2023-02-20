@@ -15,14 +15,16 @@ class _BookPageState extends State<BookPage> {
       return Container(
         decoration: BoxDecoration(
           // border: Border.all(color: Colors.black26),
-          borderRadius: BorderRadius.circular(5),
+          borderRadius: BorderRadius.circular(8),
         ),
         child: Column(
           children: [
             Image.network(
               v["coverUrl"],
+              // color: Colors.black,
               fit: BoxFit.cover,
-              width: 200, //这里随到设置的，保证大于实际宽
+              // scale: 2.1,
+              width: 190, //这里随到设置的，保证大于实际宽
               height: 130,
             ),
             const SizedBox(
@@ -30,7 +32,9 @@ class _BookPageState extends State<BookPage> {
             ),
             Text(
               v["name"],
-              textAlign: TextAlign.start,
+              textAlign: TextAlign.left,
+              overflow: TextOverflow.ellipsis,
+              maxLines: 1,
               style: const TextStyle(fontSize: 14),
             ),
           ],
