@@ -7,7 +7,8 @@ import 'package:doflutter/pages/subs/profile_page.dart';
 import 'package:doflutter/pages/subs/search_page.dart';
 import 'package:doflutter/pages/subs/setting_page.dart';
 import 'package:doflutter/pages/subs/web_page.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; //随各自系统风格
+import 'package:flutter/cupertino.dart'; //全部为iOS风格
 
 //1. 配置路由
 Map routes = {
@@ -37,13 +38,18 @@ var onGenerateRoute = (RouteSettings settings) {
       //   return pageContentBuilder(context, arguments: settings.arguments);
       // });
       //下面写法和上面一样
-      final Route route = MaterialPageRoute(
+      // final Route route = MaterialPageRoute(
+      //     builder: (context) =>
+      //         pageContentBuilder(context, arguments: settings.arguments));
+      final Route route = CupertinoPageRoute(
           builder: (context) =>
               pageContentBuilder(context, arguments: settings.arguments));
       return route;
     } else {
+      // final Route route =
+      //     MaterialPageRoute(builder: (context) => pageContentBuilder(context));
       final Route route =
-          MaterialPageRoute(builder: (context) => pageContentBuilder(context));
+          CupertinoPageRoute(builder: (context) => pageContentBuilder(context));
       return route;
     }
   }

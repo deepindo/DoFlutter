@@ -1,4 +1,3 @@
-import 'package:doflutter/pages/auth/register_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -34,11 +33,11 @@ class _LoginPageState extends State<LoginPage> {
                     TextButton(
                         onPressed: () {
                           print("点击注册");
-                          // Navigator.pushNamed(context, "/register");
-                          Navigator.push(context, MaterialPageRoute(
-                              builder: (BuildContext context) {
-                            return const RegisterPage();
-                          }));
+                          Navigator.pushNamed(context, "/register");
+                          // Navigator.push(context, MaterialPageRoute(
+                          //     builder: (BuildContext context) {
+                          //   return const RegisterPage();
+                          // }));
                         },
                         child: const Text("注册")),
                   ],
