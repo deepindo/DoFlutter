@@ -27,7 +27,7 @@ const Map<String, String> _bottomNavigationBarItemNameMap = {
 
 class _RootBottomNavigationBarState extends State<RootBottomNavigationBar> {
   // 当前item显示索引
-  int _currentIndex = 1;
+  int _currentIndex = 0;
 
   // 底部item数组
   final List<BottomNavigationBarItem> _bottomNavigationBarItmeList = [];

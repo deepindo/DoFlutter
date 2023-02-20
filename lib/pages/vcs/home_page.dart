@@ -1,4 +1,5 @@
 import 'package:doflutter/components/home_page_header.dart';
+import 'package:doflutter/tools/keepAliveWrapper.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -45,7 +46,69 @@ const List<Widget> _tabList = [
 ];
 
 final List<Widget> _tabContentControllerList = [
-  Text("1111"),
+  KeepAliveWrapper(
+    child: ListView(
+      children: const [
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("1111"),
+        ),
+        ListTile(
+          title: Text("2222"),
+        ),
+      ],
+    ),
+  ),
   Text("222"),
   Text("333"),
   Text("444"),
@@ -58,6 +121,7 @@ final List<Widget> _tabContentControllerList = [
   Text("11"),
 ];
 
+//混入的到底是SingleTickerProviderStateMixin还是下面这个
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   late TabController _tabController;
 
@@ -68,30 +132,38 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
         TabController(length: _tabList.length, vsync: this, initialIndex: 0);
 
     _tabController.addListener(() {
-      print(_tabController.index);
+      //点击事件会触发两次，用下面的判断，屏蔽掉一次
+      if (_tabController.animation!.value == _tabController.index) {
+        //滚动&点击切换都可以监听
+        print(_tabController.index);
+      }
     });
   }
 
   @override
   void dispose() {
-    _tabController.dispose();
     super.dispose();
+    _tabController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0.5,
         title: const HomePageHeader(),
         bottom: TabBar(
           tabs: _tabList,
+          onTap: (value) {
+            //只是点击事件
+            print("ontap${value}");
+          },
           controller: _tabController,
           isScrollable: true,
         ),
         // centerTitle: true,
         // backgroundColor: Colors.green,
       ),
-      // drawer: leftDrawer(),
       body: TabBarView(
         controller: _tabController,
         children: _tabContentControllerList,

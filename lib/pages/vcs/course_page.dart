@@ -46,6 +46,7 @@ class _CoursePageState extends State<CoursePage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("学习"),
+        elevation: 0.5,
         // backgroundColor: Colors.red,
       ),
       body: ListView(
