@@ -290,6 +290,8 @@ class _SettingPageState extends State<SettingPage> {
               TextButton(
                   onPressed: () {
                     Navigator.pop(context, "confirm");
+                    Navigator.pushNamedAndRemoveUntil(
+                        context, "/login", (route) => false);
                   },
                   child: const Text("确定")),
               TextButton(
