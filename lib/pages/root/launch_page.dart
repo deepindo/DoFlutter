@@ -35,11 +35,13 @@ class _LaunchPageState extends State<LaunchPage> {
   void _jumpRootPage() {
     // 取消定时器
     _timer.cancel();
-
-    Navigator.pushAndRemoveUntil(context,
-        MaterialPageRoute(builder: (BuildContext context) {
-      return const RootBottomNavigationBar();
-    }), (route) => false);
+    //基本路由
+    // Navigator.pushAndRemoveUntil(context,
+    //     MaterialPageRoute(builder: (BuildContext context) {
+    //   return const RootBottomNavigationBar();
+    // }), (route) => false);
+    //命名路由
+    Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
   }
 
   @override

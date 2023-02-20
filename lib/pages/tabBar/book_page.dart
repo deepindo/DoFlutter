@@ -67,7 +67,12 @@ class _BookPageState extends State<BookPage> {
                 Navigator.pushNamed(context, "/search");
               },
               icon: const Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz)),
+          IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, "/web",
+                    arguments: {"title": "最新活动", "aid": 12});
+              },
+              icon: const Icon(Icons.more_horiz)),
         ],
       ),
       body: GridView.count(

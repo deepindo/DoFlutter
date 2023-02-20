@@ -11,16 +11,16 @@ class CoursePage extends StatefulWidget {
 
 const List<Widget> _tabList = [
   Tab(
+    text: "学习",
+  ),
+  Tab(
+    text: "视频",
+  ),
+  Tab(
+    text: "音乐",
+  ),
+  Tab(
     text: "每日推荐",
-  ),
-  Tab(
-    text: "私人FM",
-  ),
-  Tab(
-    text: "歌单",
-  ),
-  Tab(
-    text: "排行榜",
   ),
   Tab(
     text: "有声书",
@@ -155,7 +155,7 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("学习"),
+        title: const Text("世界"),
         elevation: 0.5,
         // backgroundColor: Colors.red,
         bottom: TabBar(

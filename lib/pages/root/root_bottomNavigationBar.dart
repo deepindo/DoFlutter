@@ -19,7 +19,7 @@ class RootBottomNavigationBar extends StatefulWidget {
 // item英文对应中文名集合
 const Map<String, String> _bottomNavigationBarItemNameMap = {
   'home': '首页',
-  'music': '学习',
+  'music': '世界',
   'post': '', //如果中间item像显示文字就写这，反之留空
   'video': '阅读',
   'me': '我的',
@@ -51,7 +51,6 @@ class _RootBottomNavigationBarState extends State<RootBottomNavigationBar> {
   @override
   void initState() {
     super.initState();
-
     // 底部item数组初始化
     _bottomNavigationBarItemNameMap.forEach((key, value) {
       _bottomNavigationBarItmeList.add(_navigationBarItem(key, value));
