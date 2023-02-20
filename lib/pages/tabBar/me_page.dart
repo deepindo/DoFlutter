@@ -1,5 +1,4 @@
 import 'package:doflutter/global/config/app_colors.dart';
-import 'package:doflutter/pages/vcs/setting_page.dart';
 import 'package:flutter/material.dart';
 
 class MePage extends StatefulWidget {
@@ -20,11 +19,14 @@ class _MePageState extends State<MePage> {
           actions: [
             IconButton(
               onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (BuildContext context) {
-                  return const SettingPage();
-                }));
-                // Navigator.push(context, route);
+                //普通路由
+                // Navigator.of(context)
+                //     .push(MaterialPageRoute(builder: (BuildContext context) {
+                //   return const SettingPage();
+                // }));
+
+                //命名路由
+                Navigator.pushNamed(context, "/setting");
               },
               icon: const Icon(Icons.settings),
             ),

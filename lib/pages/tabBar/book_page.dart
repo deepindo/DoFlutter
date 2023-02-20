@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:doflutter/pages/vcs/search_page.dart';
 import 'package:doflutter/res/book_list_data.dart';
 
 class BookPage extends StatefulWidget {
@@ -59,10 +58,13 @@ class _BookPageState extends State<BookPage> {
         actions: [
           IconButton(
               onPressed: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (BuildContext context) {
-                  return const SearchPage();
-                }));
+                // Navigator.of(context)
+                //     .push(MaterialPageRoute(builder: (BuildContext context) {
+                //   return const SearchPage();
+                // }));
+
+                //命名路由
+                Navigator.pushNamed(context, "/search");
               },
               icon: const Icon(Icons.search)),
           IconButton(onPressed: () {}, icon: const Icon(Icons.more_horiz)),

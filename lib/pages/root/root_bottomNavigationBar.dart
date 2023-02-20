@@ -1,12 +1,12 @@
-import 'package:doflutter/global/config/app_colors.dart';
-import 'package:doflutter/pages/vcs/book_page.dart';
-import 'package:doflutter/pages/vcs/course_page.dart';
-import 'package:doflutter/pages/vcs/home_page.dart';
-import 'package:doflutter/pages/vcs/me_page.dart';
-// import 'package:doflutter/pages/vcs/music_page.dart';
-import 'package:doflutter/pages/vcs/post_page.dart';
-// import 'package:doflutter/pages/vcs/video_page.dart';
 import 'package:flutter/material.dart';
+import 'package:doflutter/global/config/app_colors.dart';
+import 'package:doflutter/pages/tabBar/home_page.dart';
+import 'package:doflutter/pages/tabBar/course_page.dart';
+import 'package:doflutter/pages/tabBar/post_page.dart';
+import 'package:doflutter/pages/tabBar/book_page.dart';
+import 'package:doflutter/pages/tabBar/me_page.dart';
+// import 'package:doflutter/pages/vcs/music_page.dart';
+// import 'package:doflutter/pages/vcs/video_page.dart';
 
 class RootBottomNavigationBar extends StatefulWidget {
   const RootBottomNavigationBar({super.key});
