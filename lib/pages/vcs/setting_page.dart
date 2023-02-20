@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:fluttertoast/fluttertoast.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -17,12 +18,12 @@ class _SettingPageState extends State<SettingPage> {
       body: ListView(
         children: [
           ListTile(
+            onTap: _changeAvatarBottomSheet,
             title: const Text(
               "个人资料设置",
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+            trailing: const Icon(Icons.keyboard_arrow_right),
           ),
           ListTile(
             title: const Text(
@@ -41,12 +42,12 @@ class _SettingPageState extends State<SettingPage> {
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
           ListTile(
+            onTap: _changeLanguageDialog,
             title: const Text(
-              "尺码小助手",
+              "语言设置",
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+            trailing: const Icon(Icons.keyboard_arrow_right),
           ),
           ListTile(
             title: const Text(
@@ -148,7 +149,7 @@ class _SettingPageState extends State<SettingPage> {
                 style: const ButtonStyle(
                   backgroundColor: MaterialStatePropertyAll(Colors.green),
                 ),
-                onPressed: () {},
+                onPressed: _logoutDialog,
                 child: const Text(
                   "退出登录",
                   style: TextStyle(color: Colors.white, fontSize: 16),
@@ -173,5 +174,132 @@ class _SettingPageState extends State<SettingPage> {
         ],
       ),
     );
+  }
+
+  //更换头像事件
+  void _changeAvatarBottomSheet() async {
+    var result = await showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return SizedBox(
+            height: 290,
+            child: ListView(
+              children: [
+                ListTile(
+                  onTap: (() {
+                    Navigator.pop(context, "拍照");
+                  }),
+                  title: const Text("拍照"),
+                ),
+                const Divider(),
+                ListTile(
+                  onTap: (() {
+                    Navigator.pop(context, "从手机相册选择");
+                  }),
+                  title: const Text("从手机相册选择"),
+                ),
+                const Divider(),
+                ListTile(
+                  onTap: (() {
+                    Navigator.pop(context, "保存图片");
+                  }),
+                  title: const Text("保存图片"),
+                ),
+                Container(
+                  height: 10,
+                  color: const Color.fromARGB(255, 247, 245, 245),
+                ),
+                ListTile(
+                  onTap: (() {
+                    Navigator.pop(context, "取消");
+                  }),
+                  title: const Text("取消"),
+                ),
+              ],
+            ),
+          );
+        });
+    print(result);
+  }
+
+  //选择语言事件
+  void _changeLanguageDialog() async {
+    var result = await showDialog(
+        // barrierDismissible: false,
+        context: context,
+        builder: (context) {
+          return SimpleDialog(
+            title: const Text("请选择语言"),
+            children: [
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, "中文");
+
+                  // Fluttertoast.showToast(msg: "msg");
+                  // Fluttertoast.showToast(
+                  //     msg: "切换中文成功", gravity: ToastGravity.TOP);
+
+                  // Fluttertoast.showToast(
+                  //     msg: "切换中文成功",
+                  //     toastLength: Toast.LENGTH_SHORT,
+                  //     gravity: ToastGravity.TOP,
+                  //     timeInSecForIosWeb: 1,
+                  //     backgroundColor: Colors.red,
+                  //     textColor: Colors.white,
+                  //     fontSize: 16.0);
+                },
+                child: const Text("中文"),
+              ),
+              const Divider(),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, "English");
+                },
+                child: const Text("English"),
+              ),
+              const Divider(),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, "日本語");
+                },
+                child: const Text("日本語"),
+              ),
+              const Divider(),
+              SimpleDialogOption(
+                onPressed: () {
+                  Navigator.pop(context, "한국어");
+                },
+                child: const Text("한국어"),
+              )
+            ],
+          );
+        });
+    print(result);
+  }
+
+  //退出登录事件
+  void _logoutDialog() async {
+    var result = await showDialog(
+        // barrierDismissible: false,
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            title: const Text("提示"),
+            content: const Text("确定要退出登录吗？"),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, "confirm");
+                  },
+                  child: const Text("确定")),
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context, "cancel");
+                  },
+                  child: const Text("取消"))
+            ],
+          );
+        });
+    print(result);
   }
 }
