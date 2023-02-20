@@ -41,7 +41,9 @@ class _LaunchPageState extends State<LaunchPage> {
     //   return const RootBottomNavigationBar();
     // }), (route) => false);
     //命名路由
-    Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
+    // Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
+    //这里要判断是否登录
+    Navigator.pushNamedAndRemoveUntil(context, "/login", (route) => false);
   }
 
   @override

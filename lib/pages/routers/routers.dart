@@ -1,3 +1,5 @@
+import 'package:doflutter/pages/auth/login_page.dart';
+import 'package:doflutter/pages/auth/register_page.dart';
 import 'package:doflutter/pages/root/launch_page.dart';
 import 'package:doflutter/pages/root/root_bottomNavigationBar.dart';
 import 'package:doflutter/pages/subs/form_page.dart';
@@ -12,6 +14,8 @@ Map routes = {
   //命名路由
   "/": (context) => const RootBottomNavigationBar(),
   "/launch": (context) => const LaunchPage(),
+  "/login": (context) => const LoginPage(),
+  "/register": (context) => const RegisterPage(),
   "/search": (context) => const SearchPage(),
   "/setting": (context) => const SettingPage(),
   "/profile": (context) => const ProfilePage(),
