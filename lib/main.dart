@@ -16,7 +16,7 @@ class RootApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: doThemeData,
       // home: const LaunchPage(),
-      initialRoute: "/",
+      initialRoute: "/launch",
       // routes: routes,
       onGenerateRoute: onGenerateRoute,
     );
