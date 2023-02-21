@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:doflutter/res/course_list_data.dart';
+import 'package:doflutter/resources/course_list_data.dart';
 import 'package:doflutter/tools/keepAliveWrapper.dart';
 
 class CoursePage extends StatefulWidget {

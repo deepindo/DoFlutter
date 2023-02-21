@@ -21,22 +21,24 @@ class _HomePageState extends State<HomePage> {
           },
           onTapMessage: () {
             print("message");
-          },
-        ),
-      ),
-      body: TextButton(
-          onPressed: () {
             showDialog(
+                barrierDismissible: false,
                 context: context,
                 builder: (BuildContext context) {
                   return DoDialog(
                     title: "提示",
-                    content: "这是提示信息的内容",
-                    onTap: () {},
+                    content:
+                        "我1们发现TextField默认会利eld默认会利eld默认会利eld默认会利eld默认会利认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默",
+                    onTap: () {
+                      print("close");
+                      Navigator.pop(context);
+                    },
                   );
                 });
           },
-          child: const Text("测试")),
+        ),
+      ),
+      body: TextButton(onPressed: () {}, child: const Text("测试")),
     );
   }
 }
