@@ -32,11 +32,14 @@ dependencies:
   flutter:
     sdk: flutter
 
+  get: ^4.6.5
   # http请求库
   dio: ^4.0.0 
   # fluttertoast: ^8.1.4
+  pull_to_refresh: ^2.0.0
+  flutter_swiper : ^1.1.6
+  banner_carousel: ^1.2.1
 
-  
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
