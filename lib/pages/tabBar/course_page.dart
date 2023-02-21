@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:doflutter/resources/course_list_data.dart';
 import 'package:doflutter/tools/keepAliveWrapper.dart';
+import 'package:flutter/rendering.dart';
 
 class CoursePage extends StatefulWidget {
   const CoursePage({super.key});
@@ -82,7 +85,35 @@ final List<Widget> _tabContentControllerList = [
       children: _initListData(),
     ),
   ),
-  Text("222"),
+  PageView(
+    scrollDirection: Axis.vertical,
+    children: courseDataList.map((v) {
+      return Container(
+        width: double.infinity,
+        color: Colors.black,
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: Image.network(
+                v["imageUrl"],
+                fit: BoxFit.fill,
+              ),
+            ),
+            Align(
+                alignment: Alignment.center,
+                child: IconButton(
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.slow_motion_video,
+                      size: 50,
+                      color: Colors.white,
+                    )))
+          ],
+        ),
+      );
+    }).toList(),
+  ),
   Text("333"),
   Text("444"),
   Text("55"),

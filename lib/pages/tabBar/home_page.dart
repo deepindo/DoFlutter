@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
                 context: context,
                 builder: (BuildContext context) {
                   return DoDialog(
-                    title: "提示",
+                    title: "提示信息",
                     content:
                         "我1们发现TextField默认会利eld默认会利eld默认会利eld默认会利eld默认会利认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默",
                     onTap: () {
