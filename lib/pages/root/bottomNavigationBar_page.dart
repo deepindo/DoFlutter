@@ -1,19 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:doflutter/global/config/app_colors.dart';
+import 'package:doflutter/global/do_colors.dart';
 import 'package:doflutter/pages/tabBar/home_page.dart';
 import 'package:doflutter/pages/tabBar/course_page.dart';
 import 'package:doflutter/pages/tabBar/post_page.dart';
 import 'package:doflutter/pages/tabBar/book_page.dart';
 import 'package:doflutter/pages/tabBar/me_page.dart';
-// import 'package:doflutter/pages/vcs/music_page.dart';
-// import 'package:doflutter/pages/vcs/video_page.dart';
 
-class RootBottomNavigationBar extends StatefulWidget {
-  const RootBottomNavigationBar({super.key});
+class BottomNavigationBarPage extends StatefulWidget {
+  const BottomNavigationBarPage({super.key});
 
   @override
-  State<RootBottomNavigationBar> createState() =>
-      _RootBottomNavigationBarState();
+  State<BottomNavigationBarPage> createState() =>
+      _BottomNavigationBarPageState();
 }
 
 // item英文对应中文名集合
@@ -25,7 +23,7 @@ const Map<String, String> _bottomNavigationBarItemNameMap = {
   'me': '我的',
 };
 
-class _RootBottomNavigationBarState extends State<RootBottomNavigationBar> {
+class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   // 当前item显示索引
   int _currentIndex = 0;
 
@@ -160,7 +158,7 @@ class _RootBottomNavigationBarState extends State<RootBottomNavigationBar> {
       ),
       // alignment: Alignment.center,
       child: FloatingActionButton(
-          backgroundColor: AppColors.nav,
+          backgroundColor: DoColors.nav,
           child: Image.asset(
             "assets/images/icons/post.png",
             width: 34,

@@ -1,5 +1,5 @@
-import 'package:doflutter/global/config/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:doflutter/global/do_colors.dart';
 
 class MePage extends StatefulWidget {
   const MePage({super.key});
@@ -116,7 +116,7 @@ class _MePageState extends State<MePage> {
               // Expanded(child: SizedBox()),
               Text(
                 "在闲鱼赚了6000.00元",
-                style: TextStyle(fontSize: 12, color: AppColors.un2active),
+                style: TextStyle(fontSize: 12, color: DoColors.un2active),
               ),
             ],
           ),

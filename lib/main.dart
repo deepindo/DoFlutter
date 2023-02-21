@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'global/config/app_theme.dart';
+import 'package:doflutter/global/do_theme.dart';
 import 'package:doflutter/pages/routers/routers.dart';
 
 void main() {
@@ -12,9 +12,9 @@ class RootApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "DoDu",
+      title: "DoFlutter",
       debugShowCheckedModeBanner: false,
-      theme: themeData,
+      theme: doThemeData,
       // home: const LaunchPage(),
       initialRoute: "/launch",
       // routes: routes,

@@ -1,19 +1,20 @@
 import 'package:doflutter/pages/auth/login_page.dart';
 import 'package:doflutter/pages/auth/register_page.dart';
 import 'package:doflutter/pages/root/launch_page.dart';
-import 'package:doflutter/pages/root/root_bottomNavigationBar.dart';
+import 'package:doflutter/pages/root/bottomNavigationBar_page.dart';
 import 'package:doflutter/pages/subs/form_page.dart';
 import 'package:doflutter/pages/subs/profile_page.dart';
 import 'package:doflutter/pages/subs/search_page.dart';
 import 'package:doflutter/pages/subs/setting_page.dart';
 import 'package:doflutter/pages/subs/web_page.dart';
-import 'package:flutter/material.dart'; //随各自系统风格
-import 'package:flutter/cupertino.dart'; //全部为iOS风格
+// import 'package:flutter/material.dart'; //随各自系统风格
+import 'package:flutter/cupertino.dart'; //全部为iOS风格，
+//若实际项目要这样，还得将所有使用基本路由的调用都改了，因为默认是使用的material库
 
 //1. 配置路由
 Map routes = {
   //命名路由
-  "/": (context) => const RootBottomNavigationBar(),
+  "/": (context) => const BottomNavigationBarPage(),
   "/launch": (context) => const LaunchPage(),
   "/login": (context) => const LoginPage(),
   "/register": (context) => const RegisterPage(),

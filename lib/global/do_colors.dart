@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class AppColors {
+class DoColors {
   static const Color primary = Color(0xfffbfbfb);
 
   static const Color success = Color(0xff07c160);

@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:doflutter/pages/root/root_bottomNavigationBar.dart';
+// import 'package:doflutter/pages/root/bottomNavigationBar.dart';
 import 'package:flutter/material.dart';
 
 class LaunchPage extends StatefulWidget {

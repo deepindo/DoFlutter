@@ -1,12 +1,12 @@
-import 'package:doflutter/global/config/app_colors.dart';
+import 'package:doflutter/global/do_colors.dart';
 import 'package:flutter/material.dart';
 
-final ThemeData themeData = ThemeData(
-  primaryColor: AppColors.primary, // 主题色
+final ThemeData doThemeData = ThemeData(
+  primaryColor: DoColors.primary, // 主题色
 
-  scaffoldBackgroundColor: Colors.white, //AppColors.page, // 脚手架下的页面背景色
+  scaffoldBackgroundColor: Colors.white, //DoColors.page, // 脚手架下的页面背景色
 
-  indicatorColor: AppColors.active, // 选项卡栏中所选选项卡指示器的颜色。
+  indicatorColor: DoColors.active, // 选项卡栏中所选选项卡指示器的颜色。
 
   // ElevatedButton 主题
   elevatedButtonTheme: ElevatedButtonThemeData(
@@ -22,27 +22,27 @@ final ThemeData themeData = ThemeData(
       // 背景色
       backgroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled)) {
-          return AppColors.danger.withOpacity(0.5);
+          return DoColors.danger.withOpacity(0.5);
         } else {
-          return AppColors.danger;
+          return DoColors.danger;
         }
       }),
     ),
   ),
 
-  // accentColor: AppColors.primary, // 小部件的前景色（旋钮，文本，过度滚动边缘效果等）
+  // accentColor: DoColors.primary, // 小部件的前景色（旋钮，文本，过度滚动边缘效果等）
 
   hoverColor: Colors.white.withOpacity(0.5),
 
   textTheme: const TextTheme(
     bodyText2: TextStyle(
-        // color: AppColors.unactive, // 文字颜色
+        // color: DoColors.unactive, // 文字颜色
         ),
   ),
 
   // tabbar的样式
   tabBarTheme: const TabBarTheme(
-    unselectedLabelColor: AppColors.unactive,
+    unselectedLabelColor: DoColors.unactive,
     indicatorSize: TabBarIndicatorSize.label,
     labelStyle: TextStyle(
       fontSize: 18,
@@ -51,7 +51,7 @@ final ThemeData themeData = ThemeData(
   ),
 
   appBarTheme: const AppBarTheme(
-    backgroundColor: Colors.white, //AppColors.nav,
+    backgroundColor: Colors.white, //DoColors.nav,
     foregroundColor: Colors.black,
     titleTextStyle: TextStyle(
         color: Colors.black, fontSize: 16, fontWeight: FontWeight.w300),
@@ -63,10 +63,10 @@ final ThemeData themeData = ThemeData(
   highlightColor: Colors.transparent, // 取消水波纹效果
   //bottomNavigationBar主题配置
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-    backgroundColor: AppColors.nav,
+    backgroundColor: DoColors.nav,
     type: BottomNavigationBarType.fixed,
-    unselectedItemColor: AppColors.unactive,
-    selectedItemColor: AppColors.active,
+    unselectedItemColor: DoColors.unactive,
+    selectedItemColor: DoColors.active,
     unselectedLabelStyle: TextStyle(
       fontSize: 12,
     ),
