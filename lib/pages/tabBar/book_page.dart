@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:doflutter/resources/book_list_data.dart';
+import 'package:get/get.dart';
 
 class BookPage extends StatefulWidget {
   const BookPage({super.key});
@@ -69,8 +70,10 @@ class _BookPageState extends State<BookPage> {
               icon: const Icon(Icons.search)),
           IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, "/web",
-                    arguments: {"title": "最新活动", "aid": 12});
+                print("web");
+                //   Navigator.pushNamed(context, "/web",
+                //       arguments: {"title": "最新活动", "aid": 12});
+                Get.toNamed("web", arguments: {"title": "最新活动", "aid": 12});
               },
               icon: const Icon(Icons.more_horiz)),
         ],

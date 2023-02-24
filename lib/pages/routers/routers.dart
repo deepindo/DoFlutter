@@ -8,8 +8,23 @@ import 'package:doflutter/pages/subs/search_page.dart';
 import 'package:doflutter/pages/subs/setting_page.dart';
 import 'package:doflutter/pages/subs/web_page.dart';
 // import 'package:flutter/material.dart'; //随各自系统风格
-import 'package:flutter/cupertino.dart'; //全部为iOS风格，
+import 'package:flutter/cupertino.dart';
+import 'package:get/route_manager.dart'; //全部为iOS风格，
 //若实际项目要这样，还得将所有使用基本路由的调用都改了，因为默认是使用的material库
+
+class AppPage {
+  static final routes = [
+    GetPage(name: "/", page: () => const BottomNavigationBarPage()),
+    GetPage(name: "/launch", page: () => const LaunchPage()),
+    GetPage(name: "/login", page: () => const LoginPage()),
+    GetPage(name: "/register", page: () => const RegisterPage()),
+    GetPage(name: "/search", page: () => const SearchPage()),
+    GetPage(name: "/setting", page: () => const SettingPage()),
+    GetPage(name: "/profile", page: () => const ProfilePage()),
+    GetPage(name: "/web", page: () => const WebPage()),
+    // GetPage(name: "/form", page: () => FormPage()),
+  ];
+}
 
 //1. 配置路由
 Map routes = {
@@ -21,7 +36,7 @@ Map routes = {
   "/search": (context) => const SearchPage(),
   "/setting": (context) => const SettingPage(),
   "/profile": (context) => const ProfilePage(),
-  "/web": (context, {arguments}) => WebPage(arguments: arguments),
+  // "/web": (context, {arguments}) => WebPage(arguments: arguments),
   //下面是原始写法
   "/form": (context) {
     return const FormPage();
