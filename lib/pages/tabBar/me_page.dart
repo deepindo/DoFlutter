@@ -38,54 +38,59 @@ class _MePageState extends State<MePage> {
 
   ///左侧抽屉
   Widget _leftDrawer() {
-    return Column(
-      children: [
-        Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: UserAccountsDrawerHeader(
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: NetworkImage(
-                            "https://www.itying.com/images/flutter/2.png"),
-                        fit: BoxFit.fill)),
-                currentAccountPicture: const CircleAvatar(
-                  backgroundImage: NetworkImage(
-                      "https://www.itying.com/images/flutter/1.png"),
+    return Drawer(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: UserAccountsDrawerHeader(
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              "https://www.itying.com/images/flutter/2.png"),
+                          fit: BoxFit.fill)),
+                  currentAccountPicture: const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        "https://www.itying.com/images/flutter/1.png"),
+                  ),
+                  otherAccountsPictures: [
+                    Image.network(
+                        "https://www.itying.com/images/flutter/3.png"),
+                    Image.network(
+                        "https://www.itying.com/images/flutter/4.png"),
+                    Image.network(
+                        "https://www.itying.com/images/flutter/5.png"),
+                  ],
+                  accountName: const Text("紫川秀"),
+                  accountEmail: const Text("zichuanxiu@qq.com"),
                 ),
-                otherAccountsPictures: [
-                  Image.network("https://www.itying.com/images/flutter/3.png"),
-                  Image.network("https://www.itying.com/images/flutter/4.png"),
-                  Image.network("https://www.itying.com/images/flutter/5.png"),
-                ],
-                accountName: const Text("紫川秀"),
-                accountEmail: const Text("zichuanxiu@qq.com"),
               ),
-            ),
-          ],
-        ),
-        const ListTile(
-          leading: Icon(Icons.play_circle),
-          title: Text("直播"),
-        ),
-        const ListTile(
-          leading: Icon(Icons.wallet),
-          title: Text("钱包"),
-        ),
-        const ListTile(
-          leading: Icon(Icons.album),
-          title: Text("相册"),
-        ),
-        const ListTile(
-          leading: Icon(Icons.favorite),
-          title: Text("收藏"),
-        ),
-        const ListTile(
-          leading: Icon(Icons.file_copy),
-          title: Text("文件"),
-        ),
-      ],
+            ],
+          ),
+          const ListTile(
+            leading: Icon(Icons.play_circle),
+            title: Text("直播"),
+          ),
+          const ListTile(
+            leading: Icon(Icons.wallet),
+            title: Text("钱包"),
+          ),
+          const ListTile(
+            leading: Icon(Icons.album),
+            title: Text("相册"),
+          ),
+          const ListTile(
+            leading: Icon(Icons.favorite),
+            title: Text("收藏"),
+          ),
+          const ListTile(
+            leading: Icon(Icons.file_copy),
+            title: Text("文件"),
+          ),
+        ],
+      ),
     );
   }
 
