@@ -40,10 +40,11 @@ dependencies:
   dio: ^4.0.0 
   photo_view: ^0.14.0
   easy_refresh: ^3.3.1
-  # fluttertoast: ^8.1.4
   pull_to_refresh: ^2.0.0
   flutter_swiper : ^1.1.6
   banner_carousel: ^1.2.1
+  # fluttertoast不要随便更新超过3.1.0这个版本，更新了iOS端的plugin里面找不到，会导致无法在iOS上run不起来
+  fluttertoast: ^3.1.0
 
 dev_dependencies:
   flutter_test:
