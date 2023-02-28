@@ -70,10 +70,10 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
         items: _bottomNavigationBarItmeList,
         onTap: _onTapBottomNavigationBarItem,
       ),
-      drawer: _leftDrawer(),
-      endDrawer: const Drawer(
-        child: Text("右侧"),
-      ),
+      // drawer: _leftDrawer(),
+      // endDrawer: const Drawer(
+      //   child: Text("右侧"),
+      // ),
       floatingActionButton: _floatingActionButton(),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButtonAnimator: FloatingActionButtonAnimator.scaling,

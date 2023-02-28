@@ -12,6 +12,15 @@ class DoDialog extends Dialog {
     required this.onTap,
   });
 
+  // const DoDialog(
+  //   String msg, {
+  //   super.key,
+  //   required String remark,
+  //   required this.title,
+  //   required this.content,
+  //   required this.onTap,
+  // });//msg是匿名的参数，remark是命名的参数，其他this.的是要接收的参数，{}外匿名，内命名
+
   @override
   Widget build(BuildContext context) {
     return Material(

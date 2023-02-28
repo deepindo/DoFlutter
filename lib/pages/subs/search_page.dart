@@ -81,7 +81,15 @@ class WrapButton extends StatelessWidget {
   final String title;
   final void Function()? onPressed;
   // const WrapButton({super.key});
-  const WrapButton(this.title, {super.key, required this.onPressed});
+  // const WrapButton({super.key, required this.title, required this.onPressed});
+  const WrapButton(this.title,
+      {super.key,
+      required this.onPressed}); //title放在{}外面是匿名参数，上一条放里面就要加required是命名参数
+
+  //测试可选位置参数
+  void _test(String a, String b, [String? c]) {
+    print("$a-$b-$c");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +98,9 @@ class WrapButton extends StatelessWidget {
             backgroundColor:
                 MaterialStatePropertyAll(Color.fromARGB(255, 216, 214, 214)),
             foregroundColor: MaterialStatePropertyAll(Colors.black45)),
-        onPressed: () {},
+        onPressed: () {
+          _test("1", "2", "3");
+        },
         child: Text(title));
   }
 }
