@@ -30,8 +30,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Row(
                   children: [
-                    const Text("欢迎来到DoFlutter, 立即",
-                        style: TextStyle(fontSize: 14)),
+                    const Text("欢迎来到 左右, 立即", style: TextStyle(fontSize: 14)),
                     TextButton(
                         onPressed: () {
                           print("点击注册");

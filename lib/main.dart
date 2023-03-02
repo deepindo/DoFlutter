@@ -13,7 +13,7 @@ class RootApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: "DoFlutter",
+      title: "左右",
       debugShowCheckedModeBanner: false,
       theme: doThemeData,
       // home: const LaunchPage(),
