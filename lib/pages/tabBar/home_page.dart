@@ -1,9 +1,9 @@
-import 'package:doflutter/components/do_dialog.dart';
 import 'package:doflutter/widget/page_header.dart';
 import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:banner_carousel/banner_carousel.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -45,20 +45,7 @@ class _HomePageState extends State<HomePage> {
           },
           onTapMessage: () {
             print("message");
-            showDialog(
-                barrierDismissible: false,
-                context: context,
-                builder: (BuildContext context) {
-                  return DoDialog(
-                    title: "提示信息",
-                    content:
-                        "我1们发现TextField默认会利eld默认会利eld默认会利eld默认会利eld默认会利认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默认会利eld默",
-                    onTap: () {
-                      print("close");
-                      Navigator.pop(context);
-                    },
-                  );
-                });
+            Get.toNamed("web", arguments: {"title": "Flutter实战二", "aid": 12});
           },
         ),
       ),

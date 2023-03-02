@@ -29,7 +29,7 @@ class DoDialog extends Dialog {
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            color: Colors.cyan,
+            color: Colors.white,
           ),
           width: MediaQuery.of(context).size.width - DoSize.doMargin * 4,
           height: 200,

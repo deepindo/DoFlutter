@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:doflutter/resources/book_list_data.dart';
-import 'package:get/get.dart';
+import 'package:doflutter/components/do_dialog.dart';
 
 class BookPage extends StatefulWidget {
   const BookPage({super.key});
@@ -73,7 +73,22 @@ class _BookPageState extends State<BookPage> {
                 print("web");
                 //   Navigator.pushNamed(context, "/web",
                 //       arguments: {"title": "最新活动", "aid": 12});
-                Get.toNamed("web", arguments: {"title": "最新活动", "aid": 12});
+                // Get.toNamed("web",
+                //     arguments: {"title": "Flutter实战二", "aid": 12});
+                showDialog(
+                    barrierDismissible: false,
+                    context: context,
+                    builder: (BuildContext context) {
+                      return DoDialog(
+                        title: "更多信息",
+                        content:
+                            "Flutter 目前已经支持macOS、Windows、Linux、Android、iOS、Web等多个平台这些平台中除了Web平台会比较特殊一些，因为除了它其余的“平台”都是操作系统",
+                        onTap: () {
+                          print("close");
+                          Navigator.pop(context);
+                        },
+                      );
+                    });
               },
               icon: const Icon(Icons.more_horiz)),
         ],
