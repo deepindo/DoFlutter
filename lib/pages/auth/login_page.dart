@@ -8,6 +8,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  bool? _isCheckProtocol = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,6 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                 const TextField(
                   textCapitalization: TextCapitalization.none,
                   decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.person),
                       hintText: "请输入用户名/手机号/邮箱",
                       hintStyle:
                           TextStyle(color: Color.fromARGB(255, 67, 66, 66))),
@@ -58,9 +61,12 @@ class _LoginPageState extends State<LoginPage> {
                 const TextField(
                   textCapitalization: TextCapitalization.none,
                   decoration: InputDecoration(
-                      hintText: "请输入密码",
-                      hintStyle:
-                          TextStyle(color: Color.fromARGB(255, 67, 66, 66))),
+                    prefixIcon: Icon(Icons.lock),
+                    hintText: "请输入密码",
+                    hintStyle:
+                        TextStyle(color: Color.fromARGB(255, 67, 66, 66)),
+                  ),
+                  obscureText: true,
                 ),
                 const SizedBox(
                   height: 30,
@@ -80,9 +86,16 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Row(
                   children: [
-                    IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.check_box_outline_blank)),
+                    Checkbox(
+                        value: _isCheckProtocol,
+                        onChanged: (value) {
+                          setState(() {
+                            _isCheckProtocol = value!;
+                          });
+                        }),
+                    // IconButton(
+                    //     onPressed: () {},
+                    //     icon: const Icon(Icons.check_box_outline_blank)),
                     const Text("登录注册即代表同意《用户协议》和《隐私协议》"),
                   ],
                 )
