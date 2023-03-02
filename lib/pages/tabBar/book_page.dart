@@ -56,6 +56,7 @@ class _BookPageState extends State<BookPage> {
             fontWeight: FontWeight.w900,
           ),
         ),
+        centerTitle: false,
         actions: [
           IconButton(
               onPressed: () {

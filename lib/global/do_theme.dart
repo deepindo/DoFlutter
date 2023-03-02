@@ -22,9 +22,11 @@ final ThemeData doThemeData = ThemeData(
       // 背景色
       backgroundColor: MaterialStateProperty.resolveWith((states) {
         if (states.contains(MaterialState.disabled)) {
-          return DoColors.danger.withOpacity(0.5);
+          // return DoColors.danger.withOpacity(0.5);
+          return Colors.green.withOpacity(0.5);
         } else {
-          return DoColors.danger;
+          // return DoColors.danger;
+          return Colors.green;
         }
       }),
     ),
@@ -55,7 +57,7 @@ final ThemeData doThemeData = ThemeData(
     foregroundColor: Colors.black,
     titleTextStyle: TextStyle(
         color: Colors.black, fontSize: 16, fontWeight: FontWeight.w300),
-    // centerTitle: true,
+    centerTitle: true,
     elevation: 0,
   ),
 
