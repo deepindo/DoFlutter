@@ -39,11 +39,11 @@ class DoDialog extends Dialog {
     );
   }
 
-  Widget _wellDialog() {
-    return Column(
-      children: [],
-    );
-  }
+  // Widget _wellDialog() {
+  //   return Column(
+  //     children: [],
+  //   );
+  // }
 
   //常规方法实现的dialog
   Widget _normalDialog() {

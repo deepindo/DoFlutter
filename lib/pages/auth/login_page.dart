@@ -8,7 +8,17 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  String _username = "zhangshan";
+  String _password = "";
+  late TextEditingController _usernameController;
   bool? _isCheckProtocol = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _usernameController =
+        TextEditingController.fromValue(TextEditingValue(text: _username));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,9 +56,15 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 50,
                 ),
-                const TextField(
+                TextField(
+                  controller: _usernameController,
+                  onChanged: (value) {
+                    setState(() {
+                      _username = value;
+                    });
+                  },
                   textCapitalization: TextCapitalization.none,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.person),
                       hintText: "请输入用户名/手机号/邮箱",
                       hintStyle:
@@ -57,13 +73,19 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 30,
                 ),
-                const TextField(
+                TextField(
+                  onChanged: (value) {
+                    setState(() {
+                      _password = value;
+                    });
+                  },
                   textCapitalization: TextCapitalization.none,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     prefixIcon: Icon(Icons.lock),
                     hintText: "请输入密码",
                     hintStyle:
                         TextStyle(color: Color.fromARGB(255, 67, 66, 66)),
+                    suffixIcon: Icon(Icons.visibility),
                   ),
                   obscureText: true,
                 ),
@@ -76,6 +98,7 @@ class _LoginPageState extends State<LoginPage> {
                     // padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: ElevatedButton(
                         onPressed: () {
+                          print("${_username}, ${_password}");
                           Navigator.pushNamedAndRemoveUntil(
                               context, "/", (route) => false);
                         },
