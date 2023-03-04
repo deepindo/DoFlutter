@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:doflutter/global/do_theme.dart';
 import 'package:doflutter/pages/routers/routers.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -14,6 +15,16 @@ class RootApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "左右",
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('zh'),
+        Locale('en'), // English
+        Locale('es'), // Spanish
+      ],
       debugShowCheckedModeBanner: false,
       theme: doThemeData,
       // home: const LaunchPage(),

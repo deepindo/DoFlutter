@@ -22,7 +22,7 @@ class AppPage {
     GetPage(name: "/setting", page: () => const SettingPage()),
     GetPage(name: "/profile", page: () => const ProfilePage()),
     GetPage(name: "/web", page: () => const WebPage()),
-    // GetPage(name: "/form", page: () => FormPage()),
+    GetPage(name: "/form", page: () => const FormPage()),
   ];
 }
 

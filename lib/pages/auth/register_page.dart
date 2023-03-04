@@ -15,7 +15,7 @@ class _RegisterPageState extends State<RegisterPage> {
       body: Stack(
         children: [
           Positioned(
-            top: 100,
+            top: 20,
             left: 25,
             width: MediaQuery.of(context).size.width - 50,
             child: Column(

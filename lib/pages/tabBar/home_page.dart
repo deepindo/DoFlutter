@@ -49,11 +49,19 @@ class _HomePageState extends State<HomePage> {
           },
         ),
       ),
-      body: Container(
-        color: Colors.blue,
-        width: double.infinity,
-        height: 200,
-        child: _flutterSwiper(),
+      body: ListView(
+        children: [
+          Container(
+            color: Colors.blue,
+            width: double.infinity,
+            height: 200,
+            child: _flutterSwiper(),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          _menuGridView(),
+        ],
       ),
     );
   }
@@ -96,6 +104,58 @@ class _HomePageState extends State<HomePage> {
       },
       onTap: (index) {},
       onIndexChanged: (value) {},
+    );
+  }
+
+  Widget _menuGridView() {
+    return GridView.count(
+      crossAxisCount: 5,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
+      // childAspectRatio: 1.3,
+      children: [
+        GestureDetector(
+          onTap: () {
+            Get.toNamed("/form");
+          },
+          child: Column(
+            children: const [
+              Icon(
+                Icons.feedback,
+                color: Colors.blue,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text("表单"),
+            ],
+          ),
+        ),
+        Column(
+          children: const [
+            Icon(Icons.format_align_center),
+            Text("表单"),
+          ],
+        ),
+        Column(
+          children: const [
+            Icon(Icons.format_align_center),
+            Text("表单"),
+          ],
+        ),
+        Column(
+          children: const [
+            Icon(Icons.format_align_center),
+            Text("表单"),
+          ],
+        ),
+        Column(
+          children: const [
+            Icon(Icons.format_align_center),
+            Text("表单"),
+          ],
+        ),
+      ],
     );
   }
 }
