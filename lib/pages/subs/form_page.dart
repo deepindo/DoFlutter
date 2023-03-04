@@ -13,6 +13,7 @@ class _FormPageState extends State<FormPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("反馈"),
+        shadowColor: Colors.black87,
       ),
       body: ListView(padding: const EdgeInsets.all(15), children: [
         const Text("姓名"),
@@ -86,6 +87,23 @@ class _FormPageState extends State<FormPage> {
               hintText: "请输入年收入",
               prefixIcon: Icon(Icons.near_me),
               suffixText: "元",
+              border: OutlineInputBorder(
+                  // borderRadius: BorderRadius.all(20),
+                  )),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text("备注信息"),
+        const SizedBox(
+          height: 5,
+        ),
+        const TextField(
+          maxLines: 5,
+          decoration: InputDecoration(
+              hintText: "请输入备注信息",
+              prefixIcon: Icon(Icons.description),
+              suffixIcon: Icon(Icons.close),
               border: OutlineInputBorder(
                   // borderRadius: BorderRadius.all(20),
                   )),
