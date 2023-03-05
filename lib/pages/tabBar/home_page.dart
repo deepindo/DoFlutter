@@ -119,15 +119,17 @@ class _HomePageState extends State<HomePage> {
             Get.toNamed("/form");
           },
           child: Column(
-            children: const [
-              Icon(
-                Icons.feedback,
-                color: Colors.blue,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_word.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              Text("表单"),
+              const Text("表单"),
             ],
           ),
         ),
@@ -136,43 +138,60 @@ class _HomePageState extends State<HomePage> {
             Get.toNamed("/video");
           },
           child: Column(
-            children: const [
-              Icon(
-                Icons.video_camera_front,
-                color: Colors.red,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_video.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
-              Text("视频"),
+              const Text("视频"),
             ],
           ),
         ),
         Column(
-          children: const [
-            Icon(Icons.format_align_center),
-            SizedBox(
+          children: [
+            Image.asset(
+              'assets/images/icons/type_sketch.png',
+              fit: BoxFit.cover,
+              width: 30,
+              height: 30,
+            ),
+            const SizedBox(
               height: 5,
             ),
-            Text("x"),
+            const Text("x"),
           ],
         ),
         Column(
-          children: const [
-            Icon(Icons.format_align_center),
-            SizedBox(
+          children: [
+            Image.asset(
+              'assets/images/icons/type_unknow.png',
+              fit: BoxFit.cover,
+              width: 30,
+              height: 30,
+            ),
+            const SizedBox(
               height: 5,
             ),
-            Text("y"),
+            const Text("y"),
           ],
         ),
         Column(
-          children: const [
-            Icon(Icons.format_align_center),
-            SizedBox(
+          children: [
+            Image.asset(
+              'assets/images/icons/type_pdf.png',
+              fit: BoxFit.cover,
+              width: 30,
+              height: 30,
+            ),
+            const SizedBox(
               height: 5,
             ),
-            Text("z"),
+            const Text("z"),
           ],
         ),
       ],

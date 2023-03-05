@@ -50,7 +50,7 @@ class _BookPageState extends State<BookPage> {
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 246, 227, 56),
         title: const Text(
-          "七猫免费小说",
+          "免费小说",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w900,

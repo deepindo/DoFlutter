@@ -15,8 +15,8 @@ class PageHeader extends StatelessWidget {
     return Row(
       children: [
         Image.asset(
-          "assets/images/common/logo.png",
-          height: 40,
+          "assets/images/icons/camera_black.png",
+          height: 30,
         ),
         Expanded(child: _searchContainer()),
         IconButton(

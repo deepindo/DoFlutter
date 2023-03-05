@@ -441,43 +441,47 @@ class _MePageState extends State<MePage> {
         childAspectRatio: 1.3,
         children: [
           Column(
-            children: const [
-              Icon(
-                Icons.shop,
-                color: Color.fromARGB(255, 232, 107, 19),
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_pdf.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("我的圈子"),
+              const Text("我的圈子"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.room_service,
-                color: Color.fromARGB(255, 232, 107, 19),
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_keynote.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("我的贴子"),
+              const Text("我的贴子"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.room_service,
-                color: Color.fromARGB(255, 232, 107, 19),
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_numbers.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("玩家中心"),
+              const Text("玩家中心"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.room_service,
-                color: Color.fromARGB(255, 232, 107, 19),
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_pages.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("有奖活动"),
+              const Text("有奖活动"),
             ],
           )
         ]);
@@ -492,33 +496,36 @@ class _MePageState extends State<MePage> {
         childAspectRatio: 1.3,
         children: [
           Column(
-            children: const [
-              Icon(
-                Icons.room_service,
-                color: Color.fromARGB(255, 232, 107, 19),
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_ppt.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("领闲鱼币"),
+              const Text("领闲鱼币"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.room_service,
-                color: Color.fromARGB(255, 232, 107, 19),
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_psd.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("闲鱼农场"),
+              const Text("闲鱼农场"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.room_service,
-                color: Color.fromARGB(255, 232, 107, 19),
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_rar.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("瓜分红包"),
+              const Text("瓜分红包"),
             ],
           )
         ]);
@@ -535,63 +542,69 @@ class _MePageState extends State<MePage> {
         childAspectRatio: 1.3,
         children: [
           Column(
-            children: const [
-              Icon(
-                Icons.book,
-                color: Colors.black,
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_ai.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("闲鱼公约"),
+              const Text("闲鱼公约"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.help,
-                color: Colors.black,
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_app.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("帮助与客服"),
+              const Text("帮助与客服"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.shop,
-                color: Colors.black,
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_axls.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("安全中心"),
+              const Text("安全中心"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.room_service,
-                color: Colors.black,
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_c4d.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("红包奖券"),
+              const Text("红包奖券"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.room_service,
-                color: Colors.black,
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_excel.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("认证招商"),
+              const Text("认证招商"),
             ],
           ),
           Column(
-            children: const [
-              Icon(
-                Icons.room_service,
-                color: Colors.black,
-                size: 32,
+            children: [
+              Image.asset(
+                'assets/images/icons/type_web.png',
+                fit: BoxFit.cover,
+                width: 30,
+                height: 30,
               ),
-              Text("我的拍卖"),
+              const Text("我的拍卖"),
             ],
           )
         ]);

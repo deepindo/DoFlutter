@@ -1,5 +1,6 @@
 import 'package:doflutter/global/do_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 // import 'package:fluttertoast/fluttertoast.dart';
 
@@ -66,19 +67,31 @@ class _SettingPageState extends State<SettingPage> {
               "通知设置",
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: Switch(
-              activeColor: Colors.white,
-              activeTrackColor: Colors.green,
-              inactiveThumbColor: Colors.white,
-              inactiveTrackColor: DoColors.black9,
-              value: _isEnableNotification,
-              onChanged: (value) {
-                //print("切换为${value}");
-                setState(() {
-                  _isEnableNotification = value;
-                });
-              },
-            ),
+            trailing: CupertinoSwitch(
+                //统一为苹果风格的,两种组件实现的参数代表意思不太一样
+                value: _isEnableNotification,
+                activeColor: Colors.green,
+                trackColor: DoColors.black9,
+                thumbColor: Colors.white,
+                onChanged: (value) {
+                  print("切换为${value}");
+                  setState(() {
+                    _isEnableNotification = value;
+                  });
+                }),
+            // trailing: Switch(
+            //   activeColor: Colors.white,
+            //   activeTrackColor: Colors.green,
+            //   inactiveThumbColor: Colors.white,
+            //   inactiveTrackColor: DoColors.black9,
+            //   value: _isEnableNotification,
+            //   onChanged: (value) {
+            //     //print("切换为${value}");
+            //     setState(() {
+            //       _isEnableNotification = value;
+            //     });
+            //   },
+            // ),
           ),
           ListTile(
             title: const Text(

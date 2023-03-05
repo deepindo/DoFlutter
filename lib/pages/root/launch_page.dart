@@ -52,7 +52,7 @@ class _LaunchPageState extends State<LaunchPage> {
       body: Stack(
         children: [
           Image.asset(
-            'assets/images/common/page.png',
+            'assets/images/common/launch_01.png',
             fit: BoxFit.cover,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
