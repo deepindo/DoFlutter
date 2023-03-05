@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+// import 'package:camera/camera.dart';
+import 'package:image_picker/image_picker.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -8,6 +10,9 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  final ImagePicker _picker = ImagePicker();
+  late XFile? xFile;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,6 +81,7 @@ class _ProfilePageState extends State<ProfilePage> {
               children: [
                 ListTile(
                   onTap: (() {
+                    _takeCamera();
                     Navigator.pop(context, "拍照");
                   }),
                   title: const Text("拍照"),
@@ -83,6 +89,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 const Divider(),
                 ListTile(
                   onTap: (() {
+                    _imagePicker();
                     Navigator.pop(context, "从手机相册选择");
                   }),
                   title: const Text("从手机相册选择"),
@@ -90,6 +97,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 const Divider(),
                 ListTile(
                   onTap: (() {
+                    _saveImage();
                     Navigator.pop(context, "保存图片");
                   }),
                   title: const Text("保存图片"),
@@ -109,5 +117,27 @@ class _ProfilePageState extends State<ProfilePage> {
           );
         });
     print(result);
+  }
+
+  _takeCamera() async {
+    XFile? image = await _picker.pickImage(source: ImageSource.camera);
+    if (image != null) {
+      xFile = image;
+      print(image);
+      print(image.path);
+    }
+  }
+
+  _imagePicker() async {
+    XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+    if (image != null) {
+      xFile = image;
+      print(image);
+      print(image.path);
+    }
+  }
+
+  _saveImage() {
+    print("_saveImage");
   }
 }
