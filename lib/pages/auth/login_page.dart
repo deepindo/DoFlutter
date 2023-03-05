@@ -107,8 +107,8 @@ class _LoginPageState extends State<LoginPage> {
                           // print("${_username}, ${_password}");
                           //判断checkbox
                           if (_isCheckProtocol &&
-                              !_username.isNotEmpty &&
-                              !_password.isNotEmpty) {
+                              _username.isNotEmpty &&
+                              _password.isNotEmpty) {
                             Navigator.pushNamedAndRemoveUntil(
                                 context, "/", (route) => false);
                           } else {

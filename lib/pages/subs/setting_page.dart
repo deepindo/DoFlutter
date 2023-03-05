@@ -1,5 +1,6 @@
 import 'package:doflutter/global/do_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 // import 'package:fluttertoast/fluttertoast.dart';
 
 class SettingPage extends StatefulWidget {
@@ -20,7 +21,9 @@ class _SettingPageState extends State<SettingPage> {
       body: ListView(
         children: [
           ListTile(
-            onTap: _changeAvatarBottomSheet,
+            onTap: () {
+              Get.toNamed("/profile");
+            },
             title: const Text(
               "个人资料设置",
               style: TextStyle(color: Colors.black, fontSize: 16),
@@ -117,7 +120,14 @@ class _SettingPageState extends State<SettingPage> {
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
-
+          ListTile(
+            title: const Text(
+              "关于",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+          ),
           // const SizedBox(
           //   height: 20,
           // ),
@@ -157,52 +167,6 @@ class _SettingPageState extends State<SettingPage> {
         ],
       ),
     );
-  }
-
-  //更换头像事件
-  void _changeAvatarBottomSheet() async {
-    var result = await showModalBottomSheet(
-        context: context,
-        builder: (context) {
-          return SizedBox(
-            height: 290,
-            child: ListView(
-              children: [
-                ListTile(
-                  onTap: (() {
-                    Navigator.pop(context, "拍照");
-                  }),
-                  title: const Text("拍照"),
-                ),
-                const Divider(),
-                ListTile(
-                  onTap: (() {
-                    Navigator.pop(context, "从手机相册选择");
-                  }),
-                  title: const Text("从手机相册选择"),
-                ),
-                const Divider(),
-                ListTile(
-                  onTap: (() {
-                    Navigator.pop(context, "保存图片");
-                  }),
-                  title: const Text("保存图片"),
-                ),
-                Container(
-                  height: 10,
-                  color: const Color.fromARGB(255, 247, 245, 245),
-                ),
-                ListTile(
-                  onTap: (() {
-                    Navigator.pop(context, "取消");
-                  }),
-                  title: const Text("取消"),
-                ),
-              ],
-            ),
-          );
-        });
-    // print(result);
   }
 
   //选择语言事件

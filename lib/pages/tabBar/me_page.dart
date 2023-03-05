@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:doflutter/global/do_colors.dart';
+import 'package:get/get.dart';
 
 class MePage extends StatefulWidget {
   const MePage({super.key});
@@ -49,11 +50,11 @@ class _MePageState extends State<MePage> {
                   decoration: const BoxDecoration(
                       image: DecorationImage(
                           image: NetworkImage(
-                              "https://www.itying.com/images/flutter/2.png"),
+                              "https://www.itying.com/images/flutter/1.png"),
                           fit: BoxFit.fill)),
                   currentAccountPicture: const CircleAvatar(
                     backgroundImage: NetworkImage(
-                        "https://www.itying.com/images/flutter/1.png"),
+                        "https://www.itying.com/images/flutter/2.png"),
                   ),
                   otherAccountsPictures: [
                     Image.network(
@@ -167,22 +168,91 @@ class _MePageState extends State<MePage> {
 
   //用stack和positioned实现的
   Widget _stackPositionedListHeader() {
-    return SizedBox(
-      height: 90,
-      // color: Colors.green,
-      // alignment: Alignment.centerLeft,
-      child: Stack(alignment: AlignmentDirectional.center, children: [
-        const Positioned(
-            left: 25,
-            child: CircleAvatar(
+    return InkWell(
+      //这里使用GestureDetector，空白区域无法触发事件，所以选用InkWell
+      onTap: () {
+        Get.toNamed("/profile");
+      },
+      child: SizedBox(
+        height: 90,
+        // color: Colors.green,
+        // alignment: Alignment.centerLeft,
+        child: Stack(alignment: AlignmentDirectional.center, children: [
+          const Positioned(
+              left: 25,
+              child: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  "https://www.itying.com/images/flutter/2.png",
+                ),
+                radius: 35, // 半径
+              )),
+          Positioned(
+              left: 105,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text("李白",
+                      style: TextStyle(
+                          // backgroundColor: Colors.green,
+                          fontSize: 18,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w800)),
+                  Text(
+                    "会员名: d****n",
+                    style: TextStyle(
+                        // backgroundColor: Colors.green,
+                        fontSize: 12,
+                        color: Color.fromARGB(221, 41, 41, 41)),
+                  ),
+                ],
+              )),
+          const Positioned(
+              right: 25,
+              child: Icon(
+                Icons.keyboard_arrow_right,
+                size: 20,
+              )),
+        ]),
+      ),
+    );
+  }
+
+  //自定义列表头部，实现的方式比较自由
+  Widget _customListHeader() {
+    return InkWell(
+      onTap: () {
+        Get.toNamed("/profile");
+      },
+      child: Container(
+        height: 90,
+        // color: Colors.green,
+        alignment: Alignment.centerLeft,
+        padding: const EdgeInsets.symmetric(horizontal: 25),
+        child: Row(
+          children: [
+            // ClipOval(
+            //   child: Image.network(
+            //     "https://www.itying.com/images/flutter/1.png",
+            //     fit: BoxFit.cover,
+            //     width: 70,
+            //     height: 70,
+            //   ),
+            // ),
+            const CircleAvatar(
               backgroundImage: NetworkImage(
                 "https://www.itying.com/images/flutter/2.png",
               ),
               radius: 35, // 半径
-            )),
-        Positioned(
-            left: 105,
-            child: Column(
+            ),
+            // const ListTile(
+            //   title: Text("迦若"),
+            //   subtitle: Text("会员名: jiaruo"),
+            // ), //这种不行
+            const SizedBox(
+              width: 10,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Text("李白",
@@ -199,72 +269,14 @@ class _MePageState extends State<MePage> {
                       color: Color.fromARGB(221, 41, 41, 41)),
                 ),
               ],
-            )),
-        const Positioned(
-            right: 25,
-            child: Icon(
+            ),
+            const Expanded(child: SizedBox()),
+            const Icon(
               Icons.keyboard_arrow_right,
               size: 20,
-            )),
-      ]),
-    );
-  }
-
-  //自定义列表头部，实现的方式比较自由
-  Widget _customListHeader() {
-    return Container(
-      height: 90,
-      // color: Colors.green,
-      alignment: Alignment.centerLeft,
-      padding: const EdgeInsets.symmetric(horizontal: 25),
-      child: Row(
-        children: [
-          // ClipOval(
-          //   child: Image.network(
-          //     "https://www.itying.com/images/flutter/1.png",
-          //     fit: BoxFit.cover,
-          //     width: 70,
-          //     height: 70,
-          //   ),
-          // ),
-          const CircleAvatar(
-            backgroundImage: NetworkImage(
-              "https://www.itying.com/images/flutter/2.png",
             ),
-            radius: 35, // 半径
-          ),
-          // const ListTile(
-          //   title: Text("迦若"),
-          //   subtitle: Text("会员名: jiaruo"),
-          // ), //这种不行
-          const SizedBox(
-            width: 10,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text("李白",
-                  style: TextStyle(
-                      // backgroundColor: Colors.green,
-                      fontSize: 18,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w800)),
-              Text(
-                "会员名: d****n",
-                style: TextStyle(
-                    // backgroundColor: Colors.green,
-                    fontSize: 12,
-                    color: Color.fromARGB(221, 41, 41, 41)),
-              ),
-            ],
-          ),
-          const Expanded(child: SizedBox()),
-          const Icon(
-            Icons.keyboard_arrow_right,
-            size: 20,
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
