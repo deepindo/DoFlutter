@@ -1,3 +1,7 @@
+// import 'package:flutter/material.dart'; //随各自系统风格
+import 'package:flutter/cupertino.dart';
+import 'package:get/route_manager.dart'; //全部为iOS风格，
+//若实际项目要这样，还得将所有使用基本路由的调用都改了，因为默认是使用的material库
 import 'package:doflutter/pages/auth/login_page.dart';
 import 'package:doflutter/pages/auth/register_page.dart';
 import 'package:doflutter/pages/root/launch_page.dart';
@@ -7,10 +11,7 @@ import 'package:doflutter/pages/subs/profile_page.dart';
 import 'package:doflutter/pages/subs/search_page.dart';
 import 'package:doflutter/pages/subs/setting_page.dart';
 import 'package:doflutter/pages/subs/web_page.dart';
-// import 'package:flutter/material.dart'; //随各自系统风格
-import 'package:flutter/cupertino.dart';
-import 'package:get/route_manager.dart'; //全部为iOS风格，
-//若实际项目要这样，还得将所有使用基本路由的调用都改了，因为默认是使用的material库
+import 'package:doflutter/pages/subs/video_page.dart';
 
 class AppPage {
   static final routes = [
@@ -23,6 +24,7 @@ class AppPage {
     GetPage(name: "/profile", page: () => const ProfilePage()),
     GetPage(name: "/web", page: () => const WebPage()),
     GetPage(name: "/form", page: () => const FormPage()),
+    GetPage(name: "/video", page: () => const VideoPage()),
   ];
 }
 
@@ -36,6 +38,7 @@ Map routes = {
   "/search": (context) => const SearchPage(),
   "/setting": (context) => const SettingPage(),
   "/profile": (context) => const ProfilePage(),
+  "/video": (context) => const VideoPage(),
   // "/web": (context, {arguments}) => WebPage(arguments: arguments),
   //下面是原始写法
   "/form": (context) {

@@ -1,5 +1,5 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
-// import 'package:camera/camera.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -11,7 +11,8 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   final ImagePicker _picker = ImagePicker();
-  late XFile? xFile;
+  XFile? _xFile;
+  bool _isHavePhoto = false; //目前没有后台网络数据，临时用的
 
   @override
   Widget build(BuildContext context) {
@@ -28,12 +29,19 @@ class _ProfilePageState extends State<ProfilePage> {
             child: InkWell(
               onTap: _changeAvatarBottomSheet,
               child: ClipOval(
-                child: Image.network(
-                  "https://www.itying.com/images/flutter/2.png",
-                  fit: BoxFit.cover,
-                  width: 80,
-                  height: 80,
-                ),
+                child: _isHavePhoto == false
+                    ? Image.network(
+                        "https://www.itying.com/images/flutter/2.png",
+                        fit: BoxFit.cover,
+                        width: 80,
+                        height: 80,
+                      )
+                    : Image.file(
+                        File(_xFile!.path),
+                        fit: BoxFit.cover,
+                        width: 80,
+                        height: 80,
+                      ),
               ),
             ),
           ),
@@ -122,18 +130,24 @@ class _ProfilePageState extends State<ProfilePage> {
   _takeCamera() async {
     XFile? image = await _picker.pickImage(source: ImageSource.camera);
     if (image != null) {
-      xFile = image;
       print(image);
       print(image.path);
+      _isHavePhoto = true;
+      setState(() {
+        _xFile = image;
+      });
     }
   }
 
   _imagePicker() async {
     XFile? image = await _picker.pickImage(source: ImageSource.gallery);
     if (image != null) {
-      xFile = image;
+      _isHavePhoto = true;
       print(image);
       print(image.path);
+      setState(() {
+        _xFile = image;
+      });
     }
   }
 

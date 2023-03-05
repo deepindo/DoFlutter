@@ -114,7 +114,7 @@ class _HomePageState extends State<HomePage> {
       physics: const NeverScrollableScrollPhysics(),
       // childAspectRatio: 1.3,
       children: [
-        GestureDetector(
+        InkWell(
           onTap: () {
             Get.toNamed("/form");
           },
@@ -131,28 +131,48 @@ class _HomePageState extends State<HomePage> {
             ],
           ),
         ),
+        InkWell(
+          onTap: () {
+            Get.toNamed("/video");
+          },
+          child: Column(
+            children: const [
+              Icon(
+                Icons.video_camera_front,
+                color: Colors.red,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text("视频"),
+            ],
+          ),
+        ),
         Column(
           children: const [
             Icon(Icons.format_align_center),
-            Text("表单"),
+            SizedBox(
+              height: 5,
+            ),
+            Text("x"),
           ],
         ),
         Column(
           children: const [
             Icon(Icons.format_align_center),
-            Text("表单"),
+            SizedBox(
+              height: 5,
+            ),
+            Text("y"),
           ],
         ),
         Column(
           children: const [
             Icon(Icons.format_align_center),
-            Text("表单"),
-          ],
-        ),
-        Column(
-          children: const [
-            Icon(Icons.format_align_center),
-            Text("表单"),
+            SizedBox(
+              height: 5,
+            ),
+            Text("z"),
           ],
         ),
       ],
