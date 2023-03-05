@@ -37,7 +37,7 @@ final ThemeData doThemeData = ThemeData(
   hoverColor: Colors.white.withOpacity(0.5),
 
   textTheme: const TextTheme(
-    bodyText2: TextStyle(
+    bodyMedium: TextStyle(
         // color: DoColors.unactive, // 文字颜色
         ),
   ),

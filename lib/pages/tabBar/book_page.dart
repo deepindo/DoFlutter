@@ -71,7 +71,7 @@ class _BookPageState extends State<BookPage> {
               icon: const Icon(Icons.search)),
           IconButton(
               onPressed: () {
-                print("web");
+                // print("web");
                 //   Navigator.pushNamed(context, "/web",
                 //       arguments: {"title": "最新活动", "aid": 12});
                 // Get.toNamed("web",
@@ -85,7 +85,7 @@ class _BookPageState extends State<BookPage> {
                         content:
                             "Flutter 目前已经支持macOS、Windows、Linux、Android、iOS、Web等多个平台这些平台中除了Web平台会比较特殊一些，因为除了它其余的“平台”都是操作系统",
                         onTap: () {
-                          print("close");
+                          // print("close");
                           Navigator.pop(context);
                         },
                       );
@@ -103,6 +103,5 @@ class _BookPageState extends State<BookPage> {
         children: _initBookList(),
       ),
     );
-    ;
   }
 }

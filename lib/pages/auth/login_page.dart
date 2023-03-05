@@ -11,13 +11,19 @@ class _LoginPageState extends State<LoginPage> {
   String _username = "zhangshan";
   String _password = "";
   late TextEditingController _usernameController;
-  bool? _isCheckProtocol = false;
+  bool _isCheckProtocol = false;
 
   @override
   void initState() {
     super.initState();
     _usernameController =
         TextEditingController.fromValue(TextEditingValue(text: _username));
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _usernameController.dispose();
   }
 
   @override
@@ -43,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                     const Text("欢迎来到 左右, 立即", style: TextStyle(fontSize: 14)),
                     TextButton(
                         onPressed: () {
-                          print("点击注册");
+                          // print("点击注册");
                           Navigator.pushNamed(context, "/register");
                           // Navigator.push(context, MaterialPageRoute(
                           //     builder: (BuildContext context) {
@@ -92,15 +98,22 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 30,
                 ),
-                Container(
+                SizedBox(
                     width: MediaQuery.of(context).size.width - 50,
                     height: 44,
                     // padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: ElevatedButton(
                         onPressed: () {
-                          print("${_username}, ${_password}");
-                          Navigator.pushNamedAndRemoveUntil(
-                              context, "/", (route) => false);
+                          // print("${_username}, ${_password}");
+                          //判断checkbox
+                          if (_isCheckProtocol &&
+                              !_username.isNotEmpty &&
+                              !_password.isNotEmpty) {
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, "/", (route) => false);
+                          } else {
+                            //提示
+                          }
                         },
                         child: const Text("登录"))),
                 const SizedBox(

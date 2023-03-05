@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class DoSize {
   static const double doMargin = 25;
   // static const double DoMargin = 25;

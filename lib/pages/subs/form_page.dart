@@ -8,6 +8,36 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
+  int _genderValue = -1;
+  int _isNucleicAcidValue = -1;
+
+  _onChangeGender(value) {
+    setState(() {
+      _genderValue = value;
+    });
+  }
+
+  final List<Map> _hobbyList = [
+    {"title": "运动", "checked": false},
+    {"title": "厨艺", "checked": false},
+    {"title": "摄影", "checked": false},
+  ];
+
+  List<Widget> _initHobbyWidgetList() {
+    var tempList = _hobbyList.map((e) {
+      return CheckboxListTile(
+        title: Text(e["title"]),
+        value: e["checked"],
+        onChanged: (value) {
+          setState(() {
+            e["checked"] = value;
+          });
+        },
+      );
+    });
+    return tempList.toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,15 +65,45 @@ class _FormPageState extends State<FormPage> {
         const SizedBox(
           height: 5,
         ),
-        TextField(
-          decoration: InputDecoration(
-            hintText: "请选择性别",
-            prefixIcon: const Icon(Icons.near_me),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
+        Row(
+          //多个RadioListTile之间只能垂直排列，需要水平排列多个单选，只能自己自定义编写
+          children: [
+            Radio(
+                value: 0, groupValue: _genderValue, onChanged: _onChangeGender),
+            const Text("女"),
+            const SizedBox(
+              width: 5,
             ),
-          ),
+            Radio(
+                value: 1, groupValue: _genderValue, onChanged: _onChangeGender),
+            const Text("男"),
+          ],
         ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text("核酸"),
+        const SizedBox(
+          height: 5,
+        ),
+        RadioListTile(
+            value: 0,
+            title: const Text("未核酸"),
+            groupValue: _isNucleicAcidValue,
+            onChanged: (value) {
+              setState(() {
+                _isNucleicAcidValue = value as int;
+              });
+            }),
+        RadioListTile(
+            value: 1,
+            title: const Text("已核酸"),
+            groupValue: _isNucleicAcidValue,
+            onChanged: (value) {
+              setState(() {
+                _isNucleicAcidValue = value as int;
+              });
+            }),
         const SizedBox(
           height: 10,
         ),
@@ -94,6 +154,16 @@ class _FormPageState extends State<FormPage> {
         const SizedBox(
           height: 10,
         ),
+        const Text("爱好"),
+        const SizedBox(
+          height: 5,
+        ),
+        Column(
+          children: _initHobbyWidgetList(),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
         const Text("备注信息"),
         const SizedBox(
           height: 5,
@@ -111,6 +181,13 @@ class _FormPageState extends State<FormPage> {
         const SizedBox(
           height: 10,
         ),
+        ElevatedButton(
+            onPressed: () {
+              print(_hobbyList);
+              print(_genderValue);
+              print(_isNucleicAcidValue);
+            },
+            child: const Text("提交")),
       ]),
     );
   }

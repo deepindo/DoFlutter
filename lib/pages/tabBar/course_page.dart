@@ -1,9 +1,6 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:doflutter/resources/course_list_data.dart';
 import 'package:doflutter/tools/keepAliveWrapper.dart';
-import 'package:flutter/rendering.dart';
 
 class CoursePage extends StatefulWidget {
   const CoursePage({super.key});
@@ -114,15 +111,15 @@ final List<Widget> _tabContentControllerList = [
       );
     }).toList(),
   ),
-  Text("333"),
-  Text("444"),
-  Text("55"),
-  Text("6"),
-  Text("7"),
-  Text("8"),
-  Text("999"),
-  Text("10"),
-  Text("11"),
+  const Text("333"),
+  const Text("444"),
+  const Text("55"),
+  const Text("6"),
+  const Text("7"),
+  const Text("8"),
+  const Text("999"),
+  const Text("10"),
+  const Text("11"),
 ];
 
 //混入的到底是SingleTickerProviderStateMixin还是下面这个
@@ -139,7 +136,7 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
       //点击事件会触发两次，用下面的判断，屏蔽掉一次
       if (_tabController.animation!.value == _tabController.index) {
         //滚动&点击切换都可以监听
-        print(_tabController.index);
+        // print(_tabController.index);
       }
     });
   }
@@ -193,7 +190,7 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
           tabs: _tabList,
           onTap: (value) {
             //只是点击事件
-            print("ontap${value}");
+            // print("ontap${value}");
           },
           controller: _tabController,
           isScrollable: true,

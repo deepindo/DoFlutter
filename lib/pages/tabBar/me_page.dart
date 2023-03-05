@@ -63,23 +63,29 @@ class _MePageState extends State<MePage> {
                     Image.network(
                         "https://www.itying.com/images/flutter/5.png"),
                   ],
-                  accountName: const Text("紫川秀"),
-                  accountEmail: const Text("zichuanxiu@qq.com"),
+                  accountName: const Text(
+                    "紫川秀",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  accountEmail: const Text(
+                    "zichuanxiu@qq.com",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
             ],
           ),
           const ListTile(
             leading: Icon(Icons.play_circle),
-            title: Text("直播"),
+            title: Text("订单"),
           ),
           const ListTile(
             leading: Icon(Icons.wallet),
-            title: Text("钱包"),
+            title: Text("任务"),
           ),
           const ListTile(
             leading: Icon(Icons.album),
-            title: Text("相册"),
+            title: Text("喜欢"),
           ),
           const ListTile(
             leading: Icon(Icons.favorite),

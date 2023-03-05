@@ -17,7 +17,7 @@ class _WebPageState extends State<WebPage> {
   @override
   void initState() {
     super.initState();
-    print(Get.arguments);
+    // print(Get.arguments);
 
     _webVC = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)

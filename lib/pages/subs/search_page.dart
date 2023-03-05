@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 class SearchPage extends StatefulWidget {
@@ -88,7 +86,7 @@ class WrapButton extends StatelessWidget {
 
   //测试可选位置参数
   void _test(String a, String b, [String? c]) {
-    print("$a-$b-$c");
+    // print("$a-$b-$c");
   }
 
   @override

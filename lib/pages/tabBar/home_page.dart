@@ -41,10 +41,10 @@ class _HomePageState extends State<HomePage> {
         elevation: 0.5,
         title: PageHeader(
           onTapSearch: () {
-            print("search");
+            // print("search");
           },
           onTapMessage: () {
-            print("message");
+            // print("message");
             Get.toNamed("web", arguments: {"title": "Flutter实战二", "aid": 12});
           },
         ),
@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
             height: 200,
             child: _flutterSwiper(),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           _menuGridView(),

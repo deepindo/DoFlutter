@@ -11,7 +11,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("注册")),
+      appBar: AppBar(title: const Text("注册")),
       body: Stack(
         children: [
           Positioned(
@@ -76,7 +76,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(
                   height: 30,
                 ),
-                Container(
+                SizedBox(
                     width: MediaQuery.of(context).size.width - 50,
                     height: 44,
                     // padding: const EdgeInsets.symmetric(horizontal: 5),

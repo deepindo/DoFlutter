@@ -1,3 +1,4 @@
+import 'package:doflutter/global/do_colors.dart';
 import 'package:flutter/material.dart';
 // import 'package:fluttertoast/fluttertoast.dart';
 
@@ -9,6 +10,7 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
+  bool _isEnableNotification = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +27,64 @@ class _SettingPageState extends State<SettingPage> {
             ),
             trailing: const Icon(Icons.keyboard_arrow_right),
           ),
+
+          ListTile(
+            onTap: _changeLanguageDialog,
+            title: const Text(
+              "语言设置",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: const Icon(Icons.keyboard_arrow_right),
+          ),
+          ListTile(
+            onTap: _changeLanguageDialog,
+            title: const Text(
+              "主题设置",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: const Icon(Icons.keyboard_arrow_right),
+          ),
+          ListTile(
+            onTap: _changeLanguageDialog,
+            title: const Text(
+              "深色模式",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: const Icon(Icons.keyboard_arrow_right),
+          ),
+          Container(
+            height: 5,
+            decoration: const BoxDecoration(
+              color: Color.fromARGB(255, 237, 236, 236),
+            ),
+          ),
+          ListTile(
+            title: const Text(
+              "通知设置",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: Switch(
+              activeColor: Colors.white,
+              activeTrackColor: Colors.green,
+              inactiveThumbColor: Colors.white,
+              inactiveTrackColor: DoColors.black9,
+              value: _isEnableNotification,
+              onChanged: (value) {
+                //print("切换为${value}");
+                setState(() {
+                  _isEnableNotification = value;
+                });
+              },
+            ),
+          ),
+          ListTile(
+            title: const Text(
+              "账号与安全",
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: IconButton(
+                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
+          ),
           ListTile(
             title: const Text(
               "地址管理",
@@ -35,23 +95,7 @@ class _SettingPageState extends State<SettingPage> {
           ),
           ListTile(
             title: const Text(
-              "支付设置",
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
-          ),
-          ListTile(
-            onTap: _changeLanguageDialog,
-            title: const Text(
-              "语言设置",
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            trailing: const Icon(Icons.keyboard_arrow_right),
-          ),
-          ListTile(
-            title: const Text(
-              "账号与安全",
+              "长辈模式",
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: IconButton(
@@ -67,74 +111,13 @@ class _SettingPageState extends State<SettingPage> {
           ),
           ListTile(
             title: const Text(
-              "长辈模式",
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
-          ),
-          Container(
-            height: 5,
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 237, 236, 236),
-            ),
-          ),
-          ListTile(
-            title: const Text(
               "新消息通知",
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
-          ListTile(
-            title: const Text(
-              "新消息通知",
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
-          ),
-          ListTile(
-            title: const Text(
-              "新消息通知",
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
-          ),
-          ListTile(
-            title: const Text(
-              "新消息通知",
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
-          ),
-          ListTile(
-            title: const Text(
-              "新消息通知",
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
-          ),
-          ListTile(
-            title: const Text(
-              "新消息通知",
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
-          ),
-          ListTile(
-            title: const Text(
-              "新消息通知",
-              style: TextStyle(color: Colors.black, fontSize: 16),
-            ),
-            trailing: IconButton(
-                onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
-          ),
+
           // const SizedBox(
           //   height: 20,
           // ),
@@ -219,7 +202,7 @@ class _SettingPageState extends State<SettingPage> {
             ),
           );
         });
-    print(result);
+    // print(result);
   }
 
   //选择语言事件
