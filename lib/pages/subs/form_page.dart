@@ -8,8 +8,15 @@ class FormPage extends StatefulWidget {
 }
 
 class _FormPageState extends State<FormPage> {
+  final String _username = "";
   int _genderValue = -1;
+  final String _phone = "";
+  final String _birthday = "";
+  DateTime? _dateTime;
+  TimeOfDay? _timeOfDay;
+  final String _salary = "";
   int _isNucleicAcidValue = -1;
+  final String _remark = "";
 
   _onChangeGender(value) {
     setState(() {
@@ -38,6 +45,33 @@ class _FormPageState extends State<FormPage> {
     return tempList.toList();
   }
 
+  void _showDatePicker() async {
+    DateTime? dateTime = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(1970, 1, 1),
+        lastDate: DateTime(2030, 12, 31));
+    print(dateTime);
+    if (dateTime != null) {
+      setState(() {
+        _dateTime = dateTime;
+      });
+    }
+  }
+
+  void _showTimePicker() async {
+    TimeOfDay? timeOfDay = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+    );
+    print(timeOfDay);
+    if (timeOfDay != null) {
+      setState(() {
+        _timeOfDay = timeOfDay;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,13 +84,14 @@ class _FormPageState extends State<FormPage> {
         const SizedBox(
           height: 5,
         ),
-        TextField(
+        const TextField(
           decoration: InputDecoration(
-              hintText: "请输入姓名",
-              prefixIcon: const Icon(Icons.near_me),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-              )),
+            hintText: "请输入姓名",
+            prefixIcon: Icon(Icons.people),
+            border: OutlineInputBorder(
+                // borderRadius: BorderRadius.circular(30),
+                ),
+          ),
         ),
         const SizedBox(
           height: 10,
@@ -82,7 +117,69 @@ class _FormPageState extends State<FormPage> {
         const SizedBox(
           height: 10,
         ),
+        const Text("手机号码"),
+        const SizedBox(
+          height: 5,
+        ),
+        const TextField(
+          decoration: InputDecoration(
+              hintText: "请输入手机号码",
+              prefixIcon: Icon(Icons.phone_iphone),
+              prefixText: "+86",
+              border: OutlineInputBorder(
+                  // borderRadius: BorderRadius.all(20),
+                  )),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text("出生日期"),
+        const SizedBox(
+          height: 5,
+        ),
+        // const ListTile(
+        //   title: Text("出生日期"),
+        //   trailing: Icon(Icons.arrow_forward_ios),
+        // ),
+        // const Divider(),
+        TextField(
+          // readOnly: true,
+          decoration: InputDecoration(
+            hintText: "请选择出生日期",
+            prefixIcon: const Icon(Icons.date_range),
+            suffix: IconButton(
+                onPressed: _showDatePicker,
+                icon: const Icon(
+                  Icons.keyboard_arrow_down,
+                  // size: 10,
+                )),
+            // border: InputBorder.none,
+            border: const OutlineInputBorder(
+                // borderRadius: BorderRadius.all(20),
+                ),
+          ),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        const Text("年收入"),
+        const SizedBox(
+          height: 5,
+        ),
+        const TextField(
+          decoration: InputDecoration(
+              hintText: "请输入年收入",
+              prefixIcon: Icon(Icons.money),
+              suffixText: "元",
+              border: OutlineInputBorder(
+                  // borderRadius: BorderRadius.all(20),
+                  )),
+        ),
+        const SizedBox(
+          height: 10,
+        ),
         const Text("核酸"),
+        const Divider(),
         const SizedBox(
           height: 5,
         ),
@@ -107,54 +204,8 @@ class _FormPageState extends State<FormPage> {
         const SizedBox(
           height: 10,
         ),
-        const Text("出生日期"),
-        const SizedBox(
-          height: 5,
-        ),
-        const TextField(
-          decoration: InputDecoration(
-              hintText: "请选择出生日期",
-              prefixIcon: Icon(Icons.near_me),
-              border: OutlineInputBorder(
-                  // borderRadius: BorderRadius.all(20),
-                  )),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        const Text("手机号码"),
-        const SizedBox(
-          height: 5,
-        ),
-        const TextField(
-          decoration: InputDecoration(
-              hintText: "请输入手机号码",
-              prefixIcon: Icon(Icons.near_me),
-              prefixText: "+86",
-              border: OutlineInputBorder(
-                  // borderRadius: BorderRadius.all(20),
-                  )),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
-        const Text("年收入"),
-        const SizedBox(
-          height: 5,
-        ),
-        const TextField(
-          decoration: InputDecoration(
-              hintText: "请输入年收入",
-              prefixIcon: Icon(Icons.near_me),
-              suffixText: "元",
-              border: OutlineInputBorder(
-                  // borderRadius: BorderRadius.all(20),
-                  )),
-        ),
-        const SizedBox(
-          height: 10,
-        ),
         const Text("爱好"),
+        const Divider(),
         const SizedBox(
           height: 5,
         ),
@@ -171,12 +222,13 @@ class _FormPageState extends State<FormPage> {
         const TextField(
           maxLines: 5,
           decoration: InputDecoration(
-              hintText: "请输入备注信息",
-              prefixIcon: Icon(Icons.description),
-              suffixIcon: Icon(Icons.close),
-              border: OutlineInputBorder(
-                  // borderRadius: BorderRadius.all(20),
-                  )),
+            hintText: "请输入备注信息",
+            // prefixIcon: Icon(Icons.description),
+            // suffixIcon: Icon(Icons.close),
+            border: OutlineInputBorder(
+                // borderRadius: BorderRadius.all(20),
+                ),
+          ),
         ),
         const SizedBox(
           height: 10,

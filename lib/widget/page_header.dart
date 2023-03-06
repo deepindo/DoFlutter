@@ -17,6 +17,7 @@ class PageHeader extends StatelessWidget {
         Image.asset(
           "assets/images/icons/camera_black.png",
           height: 30,
+          color: Colors.black54,
         ),
         Expanded(child: _searchContainer()),
         IconButton(
