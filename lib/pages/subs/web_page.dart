@@ -12,6 +12,8 @@ class WebPage extends StatefulWidget {
 }
 
 class _WebPageState extends State<WebPage> {
+  bool _isLoadFinished = false;
+  late final LinearProgressIndicator _indicator;
   late WebViewController _webVC;
 
   @override
@@ -19,15 +21,26 @@ class _WebPageState extends State<WebPage> {
     super.initState();
     // print(Get.arguments);
 
+    _indicator = LinearProgressIndicator(
+      backgroundColor: Colors.green[100],
+      color: Colors.green,
+    );
+
     _webVC = WebViewController()
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
-      ..setBackgroundColor(Colors.cyan)
+      // ..setBackgroundColor(Colors.white)
       ..setNavigationDelegate(NavigationDelegate(
         onProgress: (progress) {
+          print(progress);
           // Update loading bar.
+          // _indicator.value = progress;
         },
         onPageStarted: (url) {},
-        onPageFinished: (url) {},
+        onPageFinished: (url) {
+          setState(() {
+            _isLoadFinished = true;
+          });
+        },
         onWebResourceError: (error) {},
         onNavigationRequest: (request) {
           if (request.url.startsWith('https://www.youtube.com/')) {
@@ -44,7 +57,7 @@ class _WebPageState extends State<WebPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(Get.arguments["title"])),
-      body: WebViewWidget(controller: _webVC),
+      body: !_isLoadFinished ? _indicator : WebViewWidget(controller: _webVC),
       // body: Text("请求对应aid=${Get.arguments["aid"]}的数据展示即可"),
     );
   }
