@@ -16,7 +16,14 @@ class PageHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        IconButton(onPressed: onTapScan, icon: Icon(Icons.qr_code_scanner)),
+        IconButton(
+          onPressed: onTapScan,
+          icon: Image.asset(
+            "assets/images/icons/scan.png",
+            height: 26,
+            color: Colors.black,
+          ),
+        ),
         // Image.asset(
         //   "assets/images/icons/camera_black.png",
         //   height: 30,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:roundcheckbox/roundcheckbox.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -8,7 +9,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  String _username = "zhangshan";
+  String _username = "leftright";
   String _password = "";
   late TextEditingController _usernameController;
   bool _isCheckProtocol = false;
@@ -24,6 +25,14 @@ class _LoginPageState extends State<LoginPage> {
   void dispose() {
     super.dispose();
     _usernameController.dispose();
+  }
+
+  _loginButtonDidPressed() {
+    // if (_isCheckProtocol && _username.isNotEmpty && _password.isNotEmpty) {
+    Navigator.pushNamedAndRemoveUntil(context, "/", (route) => false);
+    // } else {
+    //   //提示
+    // }
   }
 
   @override
@@ -103,35 +112,52 @@ class _LoginPageState extends State<LoginPage> {
                     height: 44,
                     // padding: const EdgeInsets.symmetric(horizontal: 5),
                     child: ElevatedButton(
-                        onPressed: () {
-                          // print("${_username}, ${_password}");
-                          //判断checkbox
-                          if (_isCheckProtocol &&
-                              _username.isNotEmpty &&
-                              _password.isNotEmpty) {
-                            Navigator.pushNamedAndRemoveUntil(
-                                context, "/", (route) => false);
-                          } else {
-                            //提示
-                          }
-                        },
+                        onPressed: _loginButtonDidPressed,
                         child: const Text("登录"))),
                 const SizedBox(
                   height: 20,
                 ),
                 Row(
                   children: [
-                    Checkbox(
-                        value: _isCheckProtocol,
-                        onChanged: (value) {
-                          setState(() {
-                            _isCheckProtocol = value!;
-                          });
-                        }),
+                    RoundCheckBox(
+                      size: 18,
+                      checkedWidget: const Icon(
+                        Icons.check,
+                        color: Colors.white,
+                        size: 12,
+                      ),
+                      checkedColor: Colors.green,
+                      border: Border.all(
+                        color: _isCheckProtocol ? Colors.green : Colors.green,
+                        width: 1.5,
+                      ),
+                      isChecked: _isCheckProtocol,
+                      onTap: (value) {
+                        setState(() {
+                          _isCheckProtocol = value!;
+                        });
+                      },
+                    ),
+                    // Checkbox(
+                    //     value: _isCheckProtocol,
+                    //     onChanged: (value) {
+                    //       setState(() {
+                    //         _isCheckProtocol = value!;
+                    //       });
+                    //     }),
                     // IconButton(
                     //     onPressed: () {},
                     //     icon: const Icon(Icons.check_box_outline_blank)),
-                    const Text("登录注册即代表同意《用户协议》和《隐私协议》"),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    const Expanded(
+                      //Row里面要用Expanded，才能使Text自动换行
+                      child: Text(
+                        "登录注册即代表同意《用户协议》和《隐私协议》",
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ),
                   ],
                 )
               ],
