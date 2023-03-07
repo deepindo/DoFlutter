@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:banner_carousel/banner_carousel.dart';
 import 'package:get/get.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -45,7 +46,16 @@ class _HomePageState extends State<HomePage> {
           },
           onTapMessage: () {
             // print("message");
-            Get.toNamed("web", arguments: {"title": "Flutter实战二", "aid": 12});
+            // Get.toNamed("web", arguments: {"title": "Flutter实战二", "aid": 12});
+
+            Fluttertoast.showToast(
+                msg: "This is Center Short Toast",
+                toastLength: Toast.LENGTH_SHORT,
+                gravity: ToastGravity.CENTER,
+                timeInSecForIos: 3,
+                backgroundColor: Colors.red,
+                textColor: Colors.white,
+                fontSize: 16.0);
           },
         ),
       ),
