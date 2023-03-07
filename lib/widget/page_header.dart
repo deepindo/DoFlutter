@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:doflutter/global/do_colors.dart';
 
 class PageHeader extends StatelessWidget {
+  final Function()? onTapScan;
   final Function()? onTapSearch;
   final Function()? onTapMessage;
   const PageHeader({
     super.key,
+    required this.onTapScan,
     required this.onTapSearch,
     required this.onTapMessage,
   });
@@ -14,11 +16,12 @@ class PageHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Image.asset(
-          "assets/images/icons/camera_black.png",
-          height: 30,
-          color: Colors.black54,
-        ),
+        IconButton(onPressed: onTapScan, icon: Icon(Icons.qr_code_scanner)),
+        // Image.asset(
+        //   "assets/images/icons/camera_black.png",
+        //   height: 30,
+        //   color: Colors.black54,
+        // ),
         Expanded(child: _searchContainer()),
         IconButton(
             onPressed: onTapMessage,

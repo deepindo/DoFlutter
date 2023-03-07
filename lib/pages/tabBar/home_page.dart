@@ -5,6 +5,7 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:banner_carousel/banner_carousel.dart';
 import 'package:get/get.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:barcode_scan2/barcode_scan2.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -41,6 +42,34 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0.5,
         title: PageHeader(
+          onTapScan: () async {
+            var options = const ScanOptions(
+              // set the options
+              strings: {
+                'cancel': "取消",
+                'flash_on': "打开闪光灯",
+                'flash_off': "关闭闪光灯",
+              },
+              // restrictFormat: selectedFormats,
+              // useCamera: _selectedCamera,
+              autoEnableFlash: true,
+              android: AndroidOptions(
+                  // aspectTolerance: _aspectTolerance,
+                  // useAutoFocus: _useAutoFocus,
+                  ),
+            );
+
+            var result = await BarcodeScanner.scan(options: options);
+            Fluttertoast.showToast(
+              msg: result.rawContent,
+              gravity: ToastGravity.CENTER,
+            );
+            print(result.type); // The result type (barcode, cancelled, failed)
+            print(result.rawContent); // The barcode content
+            print(result.format); // The barcode format (as enum)
+            print(result
+                .formatNote); // If a unknown format was scanned this field contains a note
+          },
           onTapSearch: () {
             // print("search");
           },
