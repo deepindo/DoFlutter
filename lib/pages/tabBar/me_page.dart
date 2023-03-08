@@ -15,7 +15,7 @@ class _MePageState extends State<MePage> {
     return Scaffold(
         appBar: AppBar(
           // title: const Text("我的"),
-          backgroundColor: Colors.white,
+          // backgroundColor: Colors.white,
           // leading: IconButton(onPressed: () {}, icon: const Icon(Icons.menu)),
           actions: [
             IconButton(
@@ -156,9 +156,7 @@ class _MePageState extends State<MePage> {
         _myActiveGridView(),
         Container(
           height: 10,
-          decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 247, 247, 247),
-          ),
+          decoration: const BoxDecoration(),
         ),
         const Padding(padding: EdgeInsets.all(10)),
         _otherGridView(),
@@ -195,15 +193,13 @@ class _MePageState extends State<MePage> {
                       style: TextStyle(
                           // backgroundColor: Colors.green,
                           fontSize: 18,
-                          color: Colors.black,
+                          // color: Colors.black,
                           fontWeight: FontWeight.w800)),
-                  Text(
-                    "会员名: d****n",
-                    style: TextStyle(
+                  Text("会员名: d****n",
+                      style: TextStyle(
                         // backgroundColor: Colors.green,
                         fontSize: 12,
-                        color: Color.fromARGB(221, 41, 41, 41)),
-                  ),
+                      )),
                 ],
               )),
           const Positioned(
@@ -261,13 +257,11 @@ class _MePageState extends State<MePage> {
                         fontSize: 18,
                         color: Colors.black,
                         fontWeight: FontWeight.w800)),
-                Text(
-                  "会员名: d****n",
-                  style: TextStyle(
+                Text("会员名: d****n",
+                    style: TextStyle(
                       // backgroundColor: Colors.green,
                       fontSize: 12,
-                      color: Color.fromARGB(221, 41, 41, 41)),
-                ),
+                    )),
               ],
             ),
             const Expanded(child: SizedBox()),
@@ -317,61 +311,51 @@ class _MePageState extends State<MePage> {
             Text(
               "1",
               style: TextStyle(
-                  color: Colors.black,
+                  // color: Colors.black,
                   fontSize: 18,
                   fontWeight: FontWeight.w600),
             ),
-            Text("收藏",
-                style: TextStyle(
-                    color: Color.fromARGB(221, 41, 41, 41), fontSize: 12)),
+            Text("收藏", style: TextStyle(fontSize: 12)),
           ],
         ),
         Column(
           children: const [
             Text("1",
                 style: TextStyle(
-                    color: Colors.black,
+                    // color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w600)),
-            Text("历史浏览",
-                style: TextStyle(
-                    color: Color.fromARGB(221, 41, 41, 41), fontSize: 12)),
+            Text("历史浏览", style: TextStyle(fontSize: 12)),
           ],
         ),
         Column(
           children: const [
             Text("1",
                 style: TextStyle(
-                    color: Colors.black,
+                    // color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w600)),
-            Text("关注",
-                style: TextStyle(
-                    color: Color.fromARGB(221, 41, 41, 41), fontSize: 12)),
+            Text("关注", style: TextStyle(fontSize: 12)),
           ],
         ),
         Column(
           children: const [
             Text("1",
                 style: TextStyle(
-                    color: Colors.black,
+                    // color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w600)),
-            Text("粉丝",
-                style: TextStyle(
-                    color: Color.fromARGB(221, 41, 41, 41), fontSize: 12)),
+            Text("粉丝", style: TextStyle(fontSize: 12)),
           ],
         ),
         Column(
           children: const [
             Text("0",
                 style: TextStyle(
-                    color: Colors.black,
+                    // color: Colors.black,
                     fontSize: 18,
                     fontWeight: FontWeight.w600)),
-            Text("贴子",
-                style: TextStyle(
-                    color: Color.fromARGB(221, 41, 41, 41), fontSize: 12)),
+            Text("贴子", style: TextStyle(fontSize: 12)),
           ],
         )
       ],
@@ -393,9 +377,7 @@ class _MePageState extends State<MePage> {
               color: Colors.orange,
               size: 32,
             ),
-            Text("我发布的",
-                style: TextStyle(
-                    color: Color.fromARGB(221, 41, 41, 41), fontSize: 14)),
+            Text("我发布的", style: TextStyle(fontSize: 14)),
           ],
         ),
         Column(
@@ -412,17 +394,17 @@ class _MePageState extends State<MePage> {
           children: const [
             Icon(
               Icons.task,
-              color: Color.fromARGB(255, 239, 223, 82),
+              color: Colors.yellow,
               size: 32,
             ),
             Text("我买到的"),
           ],
         ),
         Column(
-          children: const [
+          children: [
             Icon(
               Icons.shop,
-              color: Color.fromARGB(255, 232, 107, 19),
+              color: Colors.orange[100],
               size: 32,
             ),
             Text("我可转卖的"),

@@ -12,7 +12,8 @@ class SettingPage extends StatefulWidget {
 }
 
 class _SettingPageState extends State<SettingPage> {
-  bool _isEnableNotification = true;
+  // bool _isEnableNotification = true;
+  bool _isEnableDarkMode = Get.isDarkMode;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,31 +55,34 @@ class _SettingPageState extends State<SettingPage> {
               "深色模式",
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: const Icon(Icons.keyboard_arrow_right),
+            trailing: CupertinoSwitch(
+                //统一为苹果风格的,两种组件实现的参数代表意思不太一样
+                value: _isEnableDarkMode,
+                activeColor: Colors.green,
+                trackColor: DoColors.black9,
+                // thumbColor: Colors.white,
+                onChanged: (value) {
+                  print("切换为${value}");
+                  setState(() {
+                    _isEnableDarkMode = value;
+                    Get.changeTheme(_isEnableDarkMode
+                        ? ThemeData.dark()
+                        : ThemeData.light());
+                  });
+                }),
           ),
           Container(
             height: 5,
             decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 237, 236, 236),
-            ),
+                // color: Color.fromARGB(255, 237, 236, 236),
+                ),
           ),
-          ListTile(
-            title: const Text(
+          const ListTile(
+            title: Text(
               "通知设置",
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
-            trailing: CupertinoSwitch(
-                //统一为苹果风格的,两种组件实现的参数代表意思不太一样
-                value: _isEnableNotification,
-                activeColor: Colors.green,
-                trackColor: DoColors.black9,
-                thumbColor: Colors.white,
-                onChanged: (value) {
-                  print("切换为${value}");
-                  setState(() {
-                    _isEnableNotification = value;
-                  });
-                }),
+            trailing: Icon(Icons.keyboard_arrow_right),
             // trailing: Switch(
             //   activeColor: Colors.white,
             //   activeTrackColor: Colors.green,
@@ -184,6 +188,8 @@ class _SettingPageState extends State<SettingPage> {
 
   _changeDarkMode() {
     Get.changeTheme(Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+    // Get.changeTheme(
+    // ThemeData(appBarTheme: AppBarTheme(backgroundColor: Colors.green)));
     // Get.changeThemeMode(ThemeMode.system);
   }
 

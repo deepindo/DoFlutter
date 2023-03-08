@@ -48,7 +48,7 @@ class _BookPageState extends State<BookPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 246, 227, 56),
+        // backgroundColor: const Color.fromARGB(255, 246, 227, 56),
         title: const Text(
           "免费小说",
           style: TextStyle(
