@@ -1,3 +1,4 @@
+import 'package:doflutter/global/do_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:roundcheckbox/roundcheckbox.dart';
 
@@ -126,9 +127,9 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.white,
                         size: 12,
                       ),
-                      checkedColor: Colors.green,
+                      checkedColor: DoColors.primary,
                       border: Border.all(
-                        color: _isCheckProtocol ? Colors.green : Colors.green,
+                        color: DoColors.primary,
                         width: 1.5,
                       ),
                       isChecked: _isCheckProtocol,

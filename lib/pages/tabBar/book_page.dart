@@ -11,7 +11,7 @@ class BookPage extends StatefulWidget {
 
 class _BookPageState extends State<BookPage> {
   List<Widget> _initBookList() {
-    var tempList = bookDataList.map((v) {
+    var tempList = bookDataList.map((e) {
       return Container(
         decoration: BoxDecoration(
           // border: Border.all(color: Colors.black26),
@@ -20,7 +20,7 @@ class _BookPageState extends State<BookPage> {
         child: Column(
           children: [
             Image.network(
-              v["coverUrl"],
+              e["coverUrl"],
               // color: Colors.black,
               fit: BoxFit.cover,
               // scale: 2.1,
@@ -31,7 +31,7 @@ class _BookPageState extends State<BookPage> {
               height: 5,
             ),
             Text(
-              v["name"],
+              e["name"],
               textAlign: TextAlign.left,
               overflow: TextOverflow.ellipsis,
               maxLines: 1,

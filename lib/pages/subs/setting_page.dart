@@ -42,7 +42,7 @@ class _SettingPageState extends State<SettingPage> {
             trailing: const Icon(Icons.keyboard_arrow_right),
           ),
           ListTile(
-            onTap: _changeLanguageDialog,
+            onTap: _changeCustomTheme,
             title: const Text(
               "主题设置",
               style: TextStyle(color: Colors.black, fontSize: 16),
@@ -58,8 +58,8 @@ class _SettingPageState extends State<SettingPage> {
             trailing: CupertinoSwitch(
                 //统一为苹果风格的,两种组件实现的参数代表意思不太一样
                 value: _isEnableDarkMode,
-                activeColor: Colors.green,
-                trackColor: DoColors.black9,
+                // activeColor: Colors.green,
+                // trackColor: DoColors.black9,
                 // thumbColor: Colors.white,
                 onChanged: (value) {
                   print("切换为${value}");
@@ -156,9 +156,9 @@ class _SettingPageState extends State<SettingPage> {
             margin: const EdgeInsets.all(25),
             // padding: const EdgeInsets.all(2),
             child: ElevatedButton(
-                style: const ButtonStyle(
-                  backgroundColor: MaterialStatePropertyAll(Colors.green),
-                ),
+                // style: const ButtonStyle(
+                //   backgroundColor: MaterialStatePropertyAll(Colors.green),
+                // ),
                 onPressed: _logoutDialog,
                 child: const Text(
                   "退出登录",
@@ -184,6 +184,10 @@ class _SettingPageState extends State<SettingPage> {
         ],
       ),
     );
+  }
+
+  _changeCustomTheme() {
+    Get.toNamed("/theme");
   }
 
   _changeDarkMode() {

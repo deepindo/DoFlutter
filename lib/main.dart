@@ -26,7 +26,9 @@ class RootApp extends StatelessWidget {
         Locale('es'), // Spanish
       ],
       debugShowCheckedModeBanner: false,
-      theme: doThemeData,
+      theme: DoTheme().lightTheme,
+      darkTheme: DoTheme().darkTheme,
+      themeMode: ThemeMode.system,
       // home: const LaunchPage(),
       initialRoute: "/launch",
       // routes: routes,

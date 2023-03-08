@@ -46,7 +46,7 @@ const List<Widget> _tabList = [
 ];
 
 List<Widget> _initListData() {
-  var tempList = courseDataList.map((v) {
+  var tempList = courseDataList.map((e) {
     return Card(
       margin: const EdgeInsets.all(10),
       elevation: 10,
@@ -56,18 +56,18 @@ List<Widget> _initListData() {
           AspectRatio(
             aspectRatio: 16 / 9,
             child: Image.network(
-              v["imageUrl"],
+              e["imageUrl"],
               fit: BoxFit.cover,
             ),
           ),
           ListTile(
             leading: CircleAvatar(
-              backgroundImage: NetworkImage(v["imageUrl"]),
+              backgroundImage: NetworkImage(e["imageUrl"]),
               // radius: 15, //在listTile中不设置，会由右边文字决定大小
             ),
             // title: Text("iOS"),
-            title: Text(v["title"]),
-            subtitle: Text(v["author"]),
+            title: Text(e["title"]),
+            subtitle: Text(e["author"]),
           )
         ],
       ),
@@ -84,7 +84,7 @@ final List<Widget> _tabContentControllerList = [
   ),
   PageView(
     scrollDirection: Axis.vertical,
-    children: courseDataList.map((v) {
+    children: courseDataList.map((e) {
       return Container(
         width: double.infinity,
         color: Colors.black,
@@ -93,7 +93,7 @@ final List<Widget> _tabContentControllerList = [
             Align(
               alignment: Alignment.center,
               child: Image.network(
-                v["imageUrl"],
+                e["imageUrl"],
                 fit: BoxFit.fill,
               ),
             ),
@@ -149,7 +149,7 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
 
   //初始化列表数据
   // List<Widget> _initListData() {
-  //   var tempList = courseDataList.map((v) {
+  //   var tempList = courseDataList.map((e) {
   //     return Card(
   //       margin: const EdgeInsets.all(10),
   //       elevation: 10,
@@ -159,18 +159,18 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
   //           AspectRatio(
   //             aspectRatio: 16 / 9,
   //             child: Image.network(
-  //               v["imageUrl"],
+  //               e["imageUrl"],
   //               fit: BoxFit.cover,
   //             ),
   //           ),
   //           ListTile(
   //             leading: CircleAvatar(
-  //               backgroundImage: NetworkImage(v["imageUrl"]),
+  //               backgroundImage: NetworkImage(e["imageUrl"]),
   //               // radius: 15, //在listTile中不设置，会由右边文字决定大小
   //             ),
   //             // title: Text("iOS"),
-  //             title: Text(v["title"]),
-  //             subtitle: Text(v["author"]),
+  //             title: Text(e["title"]),
+  //             subtitle: Text(e["author"]),
   //           )
   //         ],
   //       ),

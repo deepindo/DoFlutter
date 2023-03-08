@@ -12,6 +12,7 @@ import 'package:doflutter/pages/subs/search_page.dart';
 import 'package:doflutter/pages/subs/setting_page.dart';
 import 'package:doflutter/pages/subs/web_page.dart';
 import 'package:doflutter/pages/subs/video_page.dart';
+import 'package:doflutter/pages/subs/theme_page.dart';
 
 class AppPage {
   static final routes = [
@@ -25,6 +26,7 @@ class AppPage {
     GetPage(name: "/web", page: () => const WebPage()),
     GetPage(name: "/form", page: () => const FormPage()),
     GetPage(name: "/video", page: () => const VideoPage()),
+    GetPage(name: "/theme", page: () => const ThemePage()),
   ];
 }
 

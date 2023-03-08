@@ -7,7 +7,9 @@ class DoColors {
   static const Color black6 = Color(0xff666666);
   static const Color black9 = Color(0xff999999);
 
-  static const Color primary = Color(0xfffbfbfb);
+  // static const Color primary = Color(0xfffbfbfb);
+
+  static const Color primary = Color(0xff07c160);
   static const Color success = Color(0xff07c160);
   static const Color danger = Color(0xffee0a24);
   static const Color warning = Color(0xffffba00);

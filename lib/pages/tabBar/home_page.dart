@@ -90,8 +90,8 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: [
-          Container(
-            color: Colors.blue,
+          SizedBox(
+            // color: Colors.blue,
             width: double.infinity,
             height: 200,
             child: _flutterSwiper(),
