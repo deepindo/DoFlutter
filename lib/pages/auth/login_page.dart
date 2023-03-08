@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         children: [
           Positioned(
-            top: 100,
+            top: 80,
             left: 25,
             width: MediaQuery.of(context).size.width - 50,
             child: Column(
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
                 TextField(
                   controller: _usernameController,
@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                   obscureText: true,
                 ),
                 const SizedBox(
-                  height: 30,
+                  height: 20,
                 ),
                 SizedBox(
                     width: MediaQuery.of(context).size.width - 50,

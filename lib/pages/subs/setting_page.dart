@@ -2,7 +2,7 @@ import 'package:doflutter/global/do_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-// import 'package:fluttertoast/fluttertoast.dart';
+import 'package:doflutter/global/do_language.dart';
 
 class SettingPage extends StatefulWidget {
   const SettingPage({super.key});
@@ -18,7 +18,7 @@ class _SettingPageState extends State<SettingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("设置"),
+        title: Text("设置".tr),
       ),
       body: ListView(
         children: [
@@ -26,8 +26,8 @@ class _SettingPageState extends State<SettingPage> {
             onTap: () {
               Get.toNamed("/profile");
             },
-            title: const Text(
-              "个人资料设置",
+            title: Text(
+              "个人资料设置".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: const Icon(Icons.keyboard_arrow_right),
@@ -35,24 +35,24 @@ class _SettingPageState extends State<SettingPage> {
 
           ListTile(
             onTap: _changeLanguageDialog,
-            title: const Text(
-              "语言设置",
+            title: Text(
+              "语言设置".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: const Icon(Icons.keyboard_arrow_right),
           ),
           ListTile(
             onTap: _changeCustomTheme,
-            title: const Text(
-              "主题设置",
+            title: Text(
+              "主题设置".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: const Icon(Icons.keyboard_arrow_right),
           ),
           ListTile(
             onTap: _changeDarkMode,
-            title: const Text(
-              "深色模式",
+            title: Text(
+              "深色模式".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: CupertinoSwitch(
@@ -71,15 +71,23 @@ class _SettingPageState extends State<SettingPage> {
                   });
                 }),
           ),
+          ListTile(
+            onTap: _changeCustomTheme,
+            title: Text(
+              "字体设置".tr,
+              style: TextStyle(color: Colors.black, fontSize: 16),
+            ),
+            trailing: const Icon(Icons.keyboard_arrow_right),
+          ),
           Container(
             height: 5,
             decoration: const BoxDecoration(
                 // color: Color.fromARGB(255, 237, 236, 236),
                 ),
           ),
-          const ListTile(
+          ListTile(
             title: Text(
-              "通知设置",
+              "通知设置".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: Icon(Icons.keyboard_arrow_right),
@@ -98,48 +106,48 @@ class _SettingPageState extends State<SettingPage> {
             // ),
           ),
           ListTile(
-            title: const Text(
-              "账号与安全",
+            title: Text(
+              "账号与安全".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
           ListTile(
-            title: const Text(
-              "地址管理",
+            title: Text(
+              "地址管理".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
           ListTile(
-            title: const Text(
-              "长辈模式",
+            title: Text(
+              "关爱模式".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
           ListTile(
-            title: const Text(
-              "黑名单",
+            title: Text(
+              "黑名单".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
           ListTile(
-            title: const Text(
-              "新消息通知",
+            title: Text(
+              "新消息通知".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: IconButton(
                 onPressed: () {}, icon: const Icon(Icons.keyboard_arrow_right)),
           ),
           ListTile(
-            title: const Text(
-              "关于",
+            title: Text(
+              "关于".tr,
               style: TextStyle(color: Colors.black, fontSize: 16),
             ),
             trailing: IconButton(
@@ -160,8 +168,8 @@ class _SettingPageState extends State<SettingPage> {
                 //   backgroundColor: MaterialStatePropertyAll(Colors.green),
                 // ),
                 onPressed: _logoutDialog,
-                child: const Text(
-                  "退出登录",
+                child: Text(
+                  "退出登录".tr,
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 )),
           ),
@@ -204,48 +212,71 @@ class _SettingPageState extends State<SettingPage> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: const Text("请选择语言"),
+            title: Text("请选择语言".tr),
             children: [
               SimpleDialogOption(
                 onPressed: () {
-                  Navigator.pop(context, "中文");
-
-                  // Fluttertoast.showToast(msg: "msg");
-                  // Fluttertoast.showToast(
-                  //     msg: "切换中文成功", gravity: ToastGravity.TOP);
-
-                  // Fluttertoast.showToast(
-                  //     msg: "切换中文成功",
-                  //     toastLength: Toast.LENGTH_SHORT,
-                  //     gravity: ToastGravity.TOP,
-                  //     timeInSecForIosWeb: 1,
-                  //     backgroundColor: Colors.red,
-                  //     textColor: Colors.white,
-                  //     fontSize: 16.0);
+                  Get.back(result: "中文");
+                  Get.updateLocale(const Locale("zh", "CN"));
                 },
-                child: const Text("中文"),
+                child: Text("中文".tr),
               ),
               const Divider(),
               SimpleDialogOption(
                 onPressed: () {
-                  Navigator.pop(context, "English");
+                  Get.back(result: "英语");
+                  Get.updateLocale(const Locale("en", "US"));
                 },
-                child: const Text("English"),
+                child: Text("英语".tr),
               ),
               const Divider(),
               SimpleDialogOption(
                 onPressed: () {
-                  Navigator.pop(context, "日本語");
+                  Get.back(result: "法语");
+                  Get.updateLocale(const Locale("fr", "FR"));
                 },
-                child: const Text("日本語"),
+                child: Text("法语".tr),
+              ),
+              // const Divider(),
+              // SimpleDialogOption(
+              //   onPressed: () {
+              //     Get.back(result: "朝鲜语");
+              //     Get.updateLocale(const Locale("ko", "KP"));
+              //   },
+              //   child: Text("朝鲜语".tr),
+              // ),
+              const Divider(),
+              SimpleDialogOption(
+                onPressed: () {
+                  Get.back(result: "韩语");
+                  Get.updateLocale(const Locale("ko", "KR"));
+                },
+                child: Text("韩语".tr),
               ),
               const Divider(),
               SimpleDialogOption(
                 onPressed: () {
-                  Navigator.pop(context, "한국어");
+                  Get.back(result: "日语");
+                  Get.updateLocale(const Locale("ja", "JP"));
                 },
-                child: const Text("한국어"),
-              )
+                child: Text("日语".tr),
+              ),
+              const Divider(),
+              SimpleDialogOption(
+                onPressed: () {
+                  Get.back(result: "德语");
+                  Get.updateLocale(const Locale("de", "DE"));
+                },
+                child: Text("德语".tr),
+              ),
+              const Divider(),
+              SimpleDialogOption(
+                onPressed: () {
+                  Get.back(result: "西班牙语");
+                  Get.updateLocale(const Locale("es", "ES"));
+                },
+                child: Text("西班牙语".tr),
+              ),
             ],
           );
         });
@@ -264,14 +295,13 @@ class _SettingPageState extends State<SettingPage> {
             actions: [
               TextButton(
                   onPressed: () {
-                    Navigator.pop(context, "confirm");
-                    Navigator.pushNamedAndRemoveUntil(
-                        context, "/login", (route) => false);
+                    Get.back(result: "confirm");
+                    Get.offAllNamed("/login");
                   },
                   child: const Text("确定")),
               TextButton(
                   onPressed: () {
-                    Navigator.pop(context, "cancel");
+                    Get.back(result: "cancel");
                   },
                   child: const Text("取消"))
             ],

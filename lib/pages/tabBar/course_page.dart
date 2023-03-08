@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:doflutter/resources/course_list_data.dart';
 import 'package:doflutter/tools/keepAliveWrapper.dart';
+import 'package:doflutter/global/do_language.dart';
+import 'package:get/get.dart';
 
 class CoursePage extends StatefulWidget {
   const CoursePage({super.key});
@@ -183,7 +185,7 @@ class _CoursePageState extends State<CoursePage> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("世界"),
+        title: Text('世界'.tr),
         elevation: 0.5,
         // backgroundColor: Colors.red,
         bottom: TabBar(
