@@ -49,7 +49,7 @@ class _SettingPageState extends State<SettingPage> {
             trailing: const Icon(Icons.keyboard_arrow_right),
           ),
           ListTile(
-            onTap: _changeLanguageDialog,
+            onTap: _changeDarkMode,
             title: const Text(
               "深色模式",
               style: TextStyle(color: Colors.black, fontSize: 16),
@@ -180,6 +180,11 @@ class _SettingPageState extends State<SettingPage> {
         ],
       ),
     );
+  }
+
+  _changeDarkMode() {
+    Get.changeTheme(Get.isDarkMode ? ThemeData.light() : ThemeData.dark());
+    // Get.changeThemeMode(ThemeMode.system);
   }
 
   //选择语言事件

@@ -1,4 +1,6 @@
 # This is a generated file; do not edit or check into version control.
+amap_flutter_location=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/amap_flutter_location-3.0.0/
+amap_flutter_map=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/amap_flutter_map-3.0.0/
 barcode_scan2=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/barcode_scan2-4.2.3/
 connectivity_plus=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/connectivity_plus-3.0.3/
 device_info_plus=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/device_info_plus-8.1.0/
@@ -13,6 +15,10 @@ path_provider_android=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/path_p
 path_provider_foundation=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/path_provider_foundation-2.1.2/
 path_provider_linux=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-2.1.9/
 path_provider_windows=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/path_provider_windows-2.1.4/
+permission_handler=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/permission_handler-10.2.0/
+permission_handler_android=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_android-10.2.0/
+permission_handler_apple=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_apple-9.0.7/
+permission_handler_windows=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/permission_handler_windows-0.1.2/
 shared_preferences=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences-2.0.18/
 shared_preferences_android=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_android-2.0.16/
 shared_preferences_foundation=/Users/deepindo/.pub-cache/hosted/pub.flutter-io.cn/shared_preferences_foundation-2.1.4/

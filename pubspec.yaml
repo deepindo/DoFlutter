@@ -49,6 +49,7 @@ dependencies:
 
   # fluttertoast不要随便更新超过3.1.0这个版本，更新了iOS端的plugin里面找不到，会导致无法在iOS上run不起来
   fluttertoast: ^3.1.0
+  roundcheckbox: ^2.0.5
   webview_flutter: ^4.0.5
   
   # camera: ^0.10.3+2 #暂时没用上
@@ -56,8 +57,9 @@ dependencies:
   video_player: ^2.5.2
   chewie: ^1.4.0 #依赖video_player
   barcode_scan2: ^4.2.3
-  roundcheckbox: ^2.0.5
-
+  amap_flutter_location: ^3.0.0
+  amap_flutter_map: ^3.0.0
+  permission_handler: ^10.2.0
 
   easy_refresh: ^3.3.1
   pull_to_refresh: ^2.0.0
