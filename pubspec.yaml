@@ -42,7 +42,7 @@ dependencies:
   get: ^4.6.5
   intl: ^0.17.0
   shared_preferences: ^2.0.18
-
+  flutter_screenutil: ^5.6.1
   device_info_plus: ^8.1.0
   connectivity_plus: ^3.0.3
   url_launcher: ^6.1.10
@@ -51,6 +51,11 @@ dependencies:
   fluttertoast: ^3.1.0
   roundcheckbox: ^2.0.5
   webview_flutter: ^4.0.5
+  flutter_swiper : ^1.1.6
+  photo_view: ^0.14.0
+  easy_refresh: ^3.3.1
+  pull_to_refresh: ^2.0.0
+  path_provider: ^2.0.13
   
   #--------第三方功能相关--------
   # camera: ^0.10.3+2 #暂时没用上
@@ -62,15 +67,6 @@ dependencies:
   amap_flutter_map: ^3.0.0
   permission_handler: ^10.2.0
 
-  easy_refresh: ^3.3.1
-  pull_to_refresh: ^2.0.0
-  path_provider: ^2.0.13
-  
-  
-  photo_view: ^0.14.0
-  
-  flutter_swiper : ^1.1.6
-  banner_carousel: ^1.2.1
   
 
 dev_dependencies:

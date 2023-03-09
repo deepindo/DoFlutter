@@ -2,7 +2,6 @@ import 'package:doflutter/widget/page_header.dart';
 import 'package:flutter/material.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:banner_carousel/banner_carousel.dart';
 import 'package:get/get.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:barcode_scan2/barcode_scan2.dart';
@@ -21,19 +20,6 @@ class _HomePageState extends State<HomePage> {
     "https://www.itying.com/images/flutter/3.png",
     "https://www.itying.com/images/flutter/4.png",
     "https://www.itying.com/images/flutter/5.png"
-  ];
-
-  final List<BannerModel> _listBanners = [
-    BannerModel(
-        imagePath: "https://www.itying.com/images/flutter/1.png", id: "1"),
-    BannerModel(
-        imagePath: "https://www.itying.com/images/flutter/2.png", id: "2"),
-    BannerModel(
-        imagePath: "https://www.itying.com/images/flutter/3.png", id: "3"),
-    BannerModel(
-        imagePath: "https://www.itying.com/images/flutter/4.png", id: "4"),
-    BannerModel(
-        imagePath: "https://www.itying.com/images/flutter/5.png", id: "5"),
   ];
 
   @override
@@ -105,22 +91,6 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  //不能滚动
-  Widget _bannerCarousel() {
-    return BannerCarousel(
-      banners: _listBanners,
-      customizedIndicators: const IndicatorModel.animation(
-          width: 20, height: 5, spaceBetween: 5, widthAnimation: 50),
-      height: 200,
-      activeColor: Colors.amberAccent,
-      disableColor: Colors.white,
-      animation: true,
-      // borderRadius: 10,
-      width: double.infinity,
-      indicatorBottom: false,
-    );
-  }
-
   Widget _flutterSwiper() {
     return Swiper(
       itemCount: _bannerList.length,
@@ -134,7 +104,7 @@ class _HomePageState extends State<HomePage> {
         builder: SwiperPagination.dots,
         // builder: (BuildContext context, SwiperPluginConfig config) {},
       ),
-      control: const SwiperControl(size: 15),
+      // control: const SwiperControl(size: 15),
       itemBuilder: (context, index) {
         return Image.network(
           _bannerList[index],
