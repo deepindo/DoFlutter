@@ -46,16 +46,20 @@ dependencies:
   device_info_plus: ^8.1.0
   connectivity_plus: ^3.0.3
   url_launcher: ^6.1.10
+  path_provider: ^2.0.13
 
   # fluttertoast不要随便更新超过3.1.0这个版本，更新了iOS端的plugin里面找不到，会导致无法在iOS上run不起来
   fluttertoast: ^3.1.0
-  roundcheckbox: ^2.0.5
+  flutter_staggered_grid_view: ^0.6.2
   webview_flutter: ^4.0.5
-  flutter_swiper : ^1.1.6
+  flutter_native_splash: ^2.2.19
+  # flutter_swiper : ^1.1.6 #已经没有维护了
+  flutter_swiper_view: ^1.1.8 #基于上面的
   photo_view: ^0.14.0
   easy_refresh: ^3.3.1
   pull_to_refresh: ^2.0.0
-  path_provider: ^2.0.13
+  
+  roundcheckbox: ^2.0.5
   
   #--------第三方功能相关--------
   # camera: ^0.10.3+2 #暂时没用上
