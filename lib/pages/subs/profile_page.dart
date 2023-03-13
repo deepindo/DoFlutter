@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -27,7 +29,8 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           Center(
             child: InkWell(
-              onTap: _changeAvatarBottomSheet,
+              // onTap: _changeAvatarBottomSheet,
+              onTap: _showActionSheet,
               child: ClipOval(
                 child: _isHavePhoto == false
                     ? Image.network(
@@ -76,6 +79,83 @@ class _ProfilePageState extends State<ProfilePage> {
         ],
       ),
     );
+  }
+
+  void _showActionSheet() async {
+    await showCupertinoModalPopup(
+        context: Get.context!,
+        builder: (BuildContext context) {
+          return CupertinoActionSheet(
+            title: const Text(
+              "温馨提示",
+            ),
+            message: const Text(
+              "xxx",
+            ),
+            actions: [
+              CupertinoActionSheetAction(
+                  onPressed: () {},
+                  child: const Text("CupertinoActionSheetAction")),
+              TextButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text("拍照")),
+              TextButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text("从手机相册选择")),
+              TextButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text("保存图片"))
+            ],
+            cancelButton: TextButton(
+                onPressed: () {
+                  Get.back();
+                },
+                child: const Text("取消")),
+          );
+        });
+  }
+
+  void _showActionSheet2() async {
+    await showCupertinoModalPopup(
+        context: Get.context!,
+        builder: (BuildContext context) {
+          return CupertinoActionSheet(
+            title: const Text(
+              "温馨提示",
+            ),
+            message: const Text(
+              "xxx",
+            ),
+            actions: [
+              TextButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text("拍照")),
+              TextButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text("从手机相册选择")),
+              TextButton(
+                  onPressed: () {
+                    Get.back();
+                  },
+                  child: const Text("保存图片"))
+            ],
+            cancelButton: TextButton(
+                onPressed: () {
+                  Get.back();
+                },
+                child: const Text("取消")),
+          );
+        });
   }
 
   //更换头像事件
