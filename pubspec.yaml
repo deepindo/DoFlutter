@@ -58,7 +58,6 @@ dependencies:
   photo_view: ^0.14.0
   easy_refresh: ^3.3.1
   pull_to_refresh: ^2.0.0
-  
   roundcheckbox: ^2.0.5
   
   #--------第三方功能相关--------
@@ -71,12 +70,10 @@ dependencies:
   amap_flutter_map: ^3.0.0
   permission_handler: ^10.2.0
 
-  
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  flutter_launcher_icons: "^0.12.0"
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -84,6 +81,23 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
   intl_generator: ^0.4.1
+
+
+#app图标配置
+flutter_icons:
+  android: "icon_app"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/icons/icon_app.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+  
+#闪屏页配置
+flutter_native_splash:
+  image: assets/images/icons/icon_splash.png #对应生成iOS中LaunchImage图片，包含1x2x3x
+  color: "#ffffff" #闪屏页背景色
+  android: true  #可以选择是否支持android或者iOS
+  android_disable_fullscreen: true #禁用android全屏启动
+  fill: false #如果图像可用在所有的屏幕上添加为true，目前只支持android
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
